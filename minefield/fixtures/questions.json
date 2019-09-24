@@ -1,0 +1,770 @@
+[
+  {
+    "model": "minefield.Question",
+    "pk": 0,
+    "fields": {
+      "person": ["AMY_XIA"],
+      "q_num": 1,
+      "q_text": "Which of these personality types does she find hardest to get along with?",
+      "component": "secretCollection-049",
+      "ans_a": "Bossy.",
+      "ans_b": "Fussy.",
+      "ans_c": "Shy.",
+      "ans_d": "Temperamental.",
+      "correct_ans": "",
+      "discussion": "Which do you find most difficult to get along with? Which describes you best?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 1,
+    "fields": {
+      "person": ["AMY_XIA"],
+      "q_num": 2,
+      "q_text": "Which of these men would appeal to her most as a potential boyfriend?",
+      "component": "secretCollection-011",
+      "ans_a": "Brilliant but short scientist.",
+      "ans_b": "Handsome but stupid athlete.",
+      "ans_c": "Rich but ugly businessman.",
+      "ans_d": "Talented but self-absorbed musician.",
+      "correct_ans": "",
+      "discussion": "What adjective would describe the most important quality of your dream lover, and what would this person's job be?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 2,
+    "fields": {
+      "person": ["AMY_WANG"],
+      "q_num": 1,
+      "q_text": "Which of these countries would she most like to live in for a year?",
+      "component": "secretCollection-029",
+      "ans_a": "Bhutan.",
+      "ans_b": "Greece.",
+      "ans_c": "Iceland.",
+      "ans_d": "New Zealand.",
+      "correct_ans": "",
+      "discussion": "Which of these countries do you most want to try living in? What is the most exotic place you have ever traveled to?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 3,
+    "fields": {
+      "person": ["AMY_WANG"],
+      "q_num": 2,
+      "q_text": "Which of these does she find most frightening?",
+      "component": "secretCollection-042",
+      "ans_a": "Riding roller coasters.",
+      "ans_b": "Watching horror movies.",
+      "ans_c": "Getting her blood drawn.",
+      "ans_d": "Cats' eyes.",
+      "correct_ans": "",
+      "discussion": "Which of these things are you most afraid of? What things are you even more afraid of?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 4,
+    "fields": {
+      "person": ["ANA"],
+      "q_num": 1,
+      "q_text": "Which of these things is most important to her on a daily basis?",
+      "component": "secretCollection-000",
+      "ans_a": "Eating delicious food.",
+      "ans_b": "Learning something new.",
+      "ans_c": "Spending time with friends and family.",
+      "ans_d": "Wearing attractive clothes.",
+      "correct_ans": "",
+      "discussion": "Which is most important to you? How often are you able to achieve each of these things? Are any of the listed things not that important to you? What are some things that you try to do every day if possible?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 5,
+    "fields": {
+      "person": ["ANA"],
+      "q_num": 2,
+      "q_text": "Which of these jobs would she most like to have?",
+      "component": "secretCollection-019",
+      "ans_a": "Fashion designer.",
+      "ans_b": "Haute cuisine chef.",
+      "ans_c": "National leader.",
+      "ans_d": "Tech company CEO.",
+      "correct_ans": "",
+      "discussion": "Which of these jobs would you choose if you had to do one of them? What do you consider to be your dream job?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 6,
+    "fields": {
+      "person": ["ANDREW"],
+      "q_num": 1,
+      "q_text": "Which of these types of places does he go to most often?",
+      "component": "secretCollection-044",
+      "ans_a": "Bars or nightclubs.",
+      "ans_b": "Cafes or teahouses.",
+      "ans_c": "Night markets.",
+      "ans_d": "Spa or health club.",
+      "correct_ans": "",
+      "discussion": "Which of these places do you most often go to? What is your favorite shop for each of the four types? What activities or products do you recommend at each?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 7,
+    "fields": {
+      "person": ["ANDREW"],
+      "q_num": 2,
+      "q_text": "Which of these people's talents and expertise would he most like to have?",
+      "component": "secretCollection-007",
+      "ans_a": "Albert Einstein.",
+      "ans_b": "Ludwig van Beethoven.",
+      "ans_c": "Thomas Edison.",
+      "ans_d": "Warren Buffett.",
+      "correct_ans": "",
+      "discussion": "Which would you choose? How would you use that person's talents and expertise? Are there any other famous people whose talents and expertise you would especially like to have? In what area do you think you already have the greatest talent and expertise?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 8,
+    "fields": {
+      "person": ["CHANG"],
+      "q_num": 1,
+      "q_text": "If he could instantly have one of these skills, which would he choose?",
+      "component": "secretCollection-074",
+      "ans_a": "Fluency in the Korean language.",
+      "ans_b": "Virtuoso chops in heavy metal-style electric guitar.",
+      "ans_c": "The ability to fix almost any electronic or mechanical device.",
+      "ans_d": "World-class smartphone programming skills.",
+      "correct_ans": "",
+      "discussion": "Which would you choose? Which would you be least interested in having? What do you think is your most uncommon skill or area of knowledge? Do you think you are world-class or close to world-class in any skill?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 9,
+    "fields": {
+      "person": ["CHANG"],
+      "q_num": 2,
+      "q_text": "Which of these jobs does he think he would be best at?",
+      "component": "secretCollection-024",
+      "ans_a": "Athletic coach.",
+      "ans_b": "Fashion designer.",
+      "ans_c": "Gigolo.",
+      "ans_d": "Journalist.",
+      "correct_ans": "",
+      "discussion": "Which of these jobs do you think you would be best at? Which would you probably be worst at? What jobs have you have held in the past? Which do you think you were probably best at?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 10,
+    "fields": {
+      "person": ["CHUCK"],
+      "q_num": 1,
+      "q_text": "Which of these things does he do, or would he probably do, most often for his wife?",
+      "component": "secretCollection-094",
+      "ans_a": "Cook her a meal.",
+      "ans_b": "Give her flowers.",
+      "ans_c": "Pick her up from work.",
+      "ans_d": "Send her romantic text messages.",
+      "correct_ans": "",
+      "discussion": "Which of these things do you most often do for your spouse or significant other? Which pleases you most when someone does it for you?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 11,
+    "fields": {
+      "person": ["CHUCK"],
+      "q_num": 2,
+      "q_text": "Which of these jobs would he most like to have?",
+      "component": "secretCollection-021",
+      "ans_a": "Airline pilot.",
+      "ans_b": "Househusband.",
+      "ans_c": "Japanese AV star.",
+      "ans_d": "President of Taiwan.",
+      "correct_ans": "",
+      "discussion": "How about you—what job would you choose if you could have any in the world? How close to ideal is your current job? What was the best job that you have had so far? Have you ever had a very bad job?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 12,
+    "fields": {
+      "person": ["CINDY"],
+      "q_num": 1,
+      "q_text": "Which of these companies would she most like to work for, assuming she could choose any work position there?",
+      "component": "secretCollection-096",
+      "ans_a": "Chanel.",
+      "ans_b": "Facebook.",
+      "ans_c": "Ikea.",
+      "ans_d": "TSMC.",
+      "correct_ans": "",
+      "discussion": "Which of these would you choose? What position would you like to have?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 13,
+    "fields": {
+      "person": ["CINDY"],
+      "q_num": 2,
+      "q_text": "Which of these types of places does she go to most often?",
+      "component": "secretCollection-043",
+      "ans_a": "Fast food restaurants.",
+      "ans_b": "Cafes or teahouses.",
+      "ans_c": "Libraries or book stores.",
+      "ans_d": "Night markets.",
+      "correct_ans": "",
+      "discussion": "Which of these places do you most often go to? What is your favorite shop for each of the four types? What activities or products do you recommend at each?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 14,
+    "fields": {
+      "person": ["DUNCAN"],
+      "q_num": 1,
+      "q_text": "Which of these factors is the most important one behind his wanting to improve his English?",
+      "component": "secretCollection-086",
+      "ans_a": "English provides access to more information and know-how.",
+      "ans_b": "He needs English to do this job better.",
+      "ans_c": "He wants to be a citizen of the world.",
+      "ans_d": "He wants to have friendships with people all over the world.",
+      "correct_ans": "",
+      "discussion": "Which of these factors is most important for you? Are there any more important reasons for your wanting to improve your English?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 15,
+    "fields": {
+      "person": ["DUNCAN"],
+      "q_num": 2,
+      "q_text": "Which of these stars would he most like to have a one-night stand with?",
+      "component": "secretCollection-013",
+      "ans_a": "Lin Chiling.",
+      "ans_b": "Rainie Yang.",
+      "ans_c": "Rihanna.",
+      "ans_d": "Taylor Swift.",
+      "correct_ans": "",
+      "discussion": "If you had a chance to have a one-night stand with a celebrity you like, would you accept? Which celebrity would you choose if you could?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 16,
+    "fields": {
+      "person": ["ELAINE"],
+      "q_num": 1,
+      "q_text": "Which of these men would she choose as her boyfriend for one month if she had to choose one?",
+      "component": "secretCollection-009",
+      "ans_a": "A man as handsome as Brad Pitt, but who is extremely stupid and poor.",
+      "ans_b": "A man with AIDS, but who is a billionaire.",
+      "ans_c": "A nice-looking business executive who is married.",
+      "ans_d": "An average-looking graduate student studying literature with the financial support of his parents, with no bad habits, but who is shorter than she is.",
+      "correct_ans": "",
+      "discussion": "Which of these men would you choose for her? (for women) Which would you choose? (for men) Which do you think is most likely to describe how you will be in the future?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 17,
+    "fields": {
+      "person": ["ELAINE"],
+      "q_num": 2,
+      "q_text": "Which of these things would she be most excited about?",
+      "component": "secretCollection-081",
+      "ans_a": "Making a great scientific discovery.",
+      "ans_b": "Marrying someone famous.",
+      "ans_c": "Space travel.",
+      "ans_d": "Writing a popular novel.",
+      "correct_ans": "",
+      "discussion": "If you could choose only one of these things to happen to you during your lifetime, which would you choose? What would you be even more excited about?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 18,
+    "fields": {
+      "person": ["FRANK"],
+      "q_num": 1,
+      "q_text": "Which of these things is most important to him?",
+      "component": "secretCollection-098",
+      "ans_a": "Delicious food.",
+      "ans_b": "Harmonious family life.",
+      "ans_c": "Rewarding work.",
+      "ans_d": "Stimulating hobbies and personal projects.",
+      "correct_ans": "",
+      "discussion": "Which of these things is most important to you? Which of the listed things do you have now?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 19,
+    "fields": {
+      "person": ["FRANK"],
+      "q_num": 2,
+      "q_text": "If he could be an expert in one of these areas, which would he choose?",
+      "component": "secretCollection-050",
+      "ans_a": "Ballroom dancing.",
+      "ans_b": "Calligraphy.",
+      "ans_c": "Chinese cooking.",
+      "ans_d": "Computer technology.",
+      "correct_ans": "",
+      "discussion": "Which would you choose? Which do you already know much about, or know how to do very well?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 20,
+    "fields": {
+      "person": ["JASMINE"],
+      "q_num": 1,
+      "q_text": "Which of these jobs does she think she would be best at?",
+      "component": "secretCollection-023",
+      "ans_a": "Actress.",
+      "ans_b": "Business executive.",
+      "ans_c": "Designer.",
+      "ans_d": "Teacher.",
+      "correct_ans": "",
+      "discussion": "Which of these jobs do you think you would be best at? Which would you probably be worst at? What jobs have you have held in the past? Which do you think you were probably best at?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 21,
+    "fields": {
+      "person": ["JASMINE"],
+      "q_num": 2,
+      "q_text": "If she could be proficient at one of these things, which would he choose?",
+      "component": "secretCollection-041",
+      "ans_a": "Fortunetelling.",
+      "ans_b": "French cooking.",
+      "ans_c": "Songwriting.",
+      "ans_d": "Stock market analysis.",
+      "correct_ans": "",
+      "discussion": "Which would you choose? Why? Can you do any of these things at least somewhat well already? What are some other skills that you most like to have? How difficult do you think it would be for you to acquire these skills?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 22,
+    "fields": {
+      "person": ["JASON"],
+      "q_num": 1,
+      "q_text": "Which of these companies would he most like to work for, assuming he could choose any work position there?",
+      "component": "secretCollection-097",
+      "ans_a": "Credit Suisse.",
+      "ans_b": "Gogoro.",
+      "ans_c": "Louis Vuitton.",
+      "ans_d": "Samsung.",
+      "correct_ans": "",
+      "discussion": "Which of these would you choose? What position would you like to have?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 23,
+    "fields": {
+      "person": ["JASON"],
+      "q_num": 2,
+      "q_text": "Which of these things would he most like to have?",
+      "component": "secretCollection-051",
+      "ans_a": "The world's most brilliant mind.",
+      "ans_b": "The world's most dazzling sports car.",
+      "ans_c": "The world's most luxurious home.",
+      "ans_d": "His own personalized celebrity harem.",
+      "correct_ans": "",
+      "discussion": "Which would you choose? What car do you most want to own? What would your dream house be like? What public figure do you think is most brilliant? Who would be a few of the 'must-haves' for your celebrity harem?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 24,
+    "fields": {
+      "person": ["KEVIN"],
+      "q_num": 1,
+      "q_text": "Which of these things would he be most excited about?",
+      "component": "secretCollection-082",
+      "ans_a": "Composing a musical work hailed as a masterpiece.",
+      "ans_b": "Inventing a technology with great commercial potential.",
+      "ans_c": "Getting married to a world-famous fashion model.",
+      "ans_d": "Becoming Secretary-General of the United Nations.",
+      "correct_ans": "",
+      "discussion": "If you could choose only one of these things to happen to you during your lifetime, which would you choose? What would you be even more excited about?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 25,
+    "fields": {
+      "person": ["KEVIN"],
+      "q_num": 2,
+      "q_text": "In which of these situations is he most likely to lose his temper?",
+      "component": "secretCollection-039",
+      "ans_a": "When he sees people not following traffic laws.",
+      "ans_b": "When parents allow their children to run around and make noise in a restaurant.",
+      "ans_c": "When people around him smoke even though it's prohibited.",
+      "ans_d": "When people speak loudly on their mobile phones in a quiet place.",
+      "correct_ans": "",
+      "discussion": "Which of these situations do you find most annoying? Are there any other common situations that easily lead to your losing your temper?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 26,
+    "fields": {
+      "person": ["KO"],
+      "q_num": 1,
+      "q_text": "What kind of friend does she value most?",
+      "component": "secretCollection-099",
+      "ans_a": "A funny one.",
+      "ans_b": "A helpful one.",
+      "ans_c": "A physically attractive one.",
+      "ans_d": "A smart one.",
+      "correct_ans": "",
+      "discussion": "What qualities do you value most in a friend? Does your best friend have all these qualities? Do you think you have these qualities?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 27,
+    "fields": {
+      "person": ["KO"],
+      "q_num": 2,
+      "q_text": "Which of these women would she most envy, or if not envy, admire?",
+      "component": "secretCollection-018",
+      "ans_a": "A bitchy sex goddess with hordes of men groveling at her feet and willing to do anything she wanted.",
+      "ans_b": "A brilliantly talented musician and author.",
+      "ans_c": "A Taiwanese woman who spends her life traveling the world, supporting herself by teaching Chinese.",
+      "ans_d": "A wealthy heiress who lives the most luxurious life possible.",
+      "correct_ans": "",
+      "discussion": "Which do you most envy or admire? What other types of people do you envy or admire? Have you ever met someone similar to any of these types of people?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 28,
+    "fields": {
+      "person": ["LAVONNE"],
+      "q_num": 1,
+      "q_text": "If she had to keep one of these hairstyles for the rest of her life, which would she choose?",
+      "component": "secretCollection-053",
+      "ans_a": "Short and straight.",
+      "ans_b": "Long and straight.",
+      "ans_c": "Short and curly.",
+      "ans_d": "Long and curly.",
+      "correct_ans": "",
+      "discussion": "Which do you think looks best on you?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 29,
+    "fields": {
+      "person": ["LAVONNE"],
+      "q_num": 2,
+      "q_text": "Which of these guys would she choose as a boyfriend?",
+      "component": "secretCollection-008",
+      "ans_a": "Stupid, ugly, but rich.",
+      "ans_b": "Poor, average in intelligence, but very handsome.",
+      "ans_c": "Average in looks, intelligence, and income.",
+      "ans_d": "Ugly and poor, but extremely brilliant and talented.",
+      "correct_ans": "",
+      "discussion": "Which type of person would you choose as a boyfriend or girlfriend? What about as a spouse?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 30,
+    "fields": {
+      "person": ["LULU"],
+      "q_num": 1,
+      "q_text": "Which of these foreign cuisines does she like best?",
+      "component": "secretCollection-032",
+      "ans_a": "American.",
+      "ans_b": "Italian.",
+      "ans_c": "Japanese.",
+      "ans_d": "Thai.",
+      "correct_ans": "",
+      "discussion": "What's your favorite cuisine? Are there any that you dislike?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 31,
+    "fields": {
+      "person": ["LULU"],
+      "q_num": 2,
+      "q_text": "Which of these famous women does she admire most?",
+      "component": "secretCollection-064",
+      "ans_a": "Angela Merkel.",
+      "ans_b": "Angelina Jolie.",
+      "ans_c": "J K Rowling.",
+      "ans_d": "Rihanna.",
+      "correct_ans": "",
+      "discussion": "Who do you admire most? Are there any other famous women you admire more?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 32,
+    "fields": {
+      "person": ["MONICA"],
+      "q_num": 1,
+      "q_text": "Which of these men would appeal to her most as a potential boyfriend?",
+      "component": "secretCollection-010",
+      "ans_a": "Brilliant scientist.",
+      "ans_b": "Handsome athlete.",
+      "ans_c": "Rich businessman.",
+      "ans_d": "Talented musician.",
+      "correct_ans": "",
+      "discussion": "What adjective would describe the most important quality of your dream lover, and what would this person's job be?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 33,
+    "fields": {
+      "person": ["MONICA"],
+      "q_num": 2,
+      "q_text": "If she could be one of these people in the future, which would she choose?",
+      "component": "secretCollection-092",
+      "ans_a": "A housewife who can completely satisfy her husband.",
+      "ans_b": "A writer of bestselling travel books.",
+      "ans_c": "Owner of Korean language school.",
+      "ans_d": "Successful speculative investor.",
+      "correct_ans": "",
+      "discussion": "Which would you choose for yourself? Which sounds least appealing to you?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 34,
+    "fields": {
+      "person": ["MORRIS"],
+      "q_num": 1,
+      "q_text": "Which of these women would appeal to him most as a potential girlfriend?",
+      "component": "secretCollection-014",
+      "ans_a": "A bitchy, but extremely humorous and sexy actress.",
+      "ans_b": "A dull but very rich older woman who treated him like a king.",
+      "ans_c": "An extremely interesting and adventurous but average-looking scientist.",
+      "ans_d": "Dumb beautiful blonde.",
+      "correct_ans": "",
+      "discussion": "Which would most appeal to you (switch the genders in the question if you are a woman)? What would your ideal lover be like? What famous person is closest to your ideal?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 35,
+    "fields": {
+      "person": ["MORRIS"],
+      "q_num": 2,
+      "q_text": "Which of these things is most important to him on a daily basis?",
+      "component": "secretCollection-001",
+      "ans_a": "Doing something fun.",
+      "ans_b": "Eating delicious food.",
+      "ans_c": "Learning something new.",
+      "ans_d": "Making progress on a personal project.",
+      "correct_ans": "",
+      "discussion": "Which is most important to you? How often are you able to achieve each of these things? Are any of the listed things not that important to you? What are some things that you try to do every day if possible?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 36,
+    "fields": {
+      "person": ["PATRICIA"],
+      "q_num": 1,
+      "q_text": "Which of these would be her most likely action if she saw a cockroach in her room just before going to bed?",
+      "component": "secretCollection-072",
+      "ans_a": "Find someone else to kill it for her.",
+      "ans_b": "Ignore it.",
+      "ans_c": "Sleep somewhere else.",
+      "ans_d": "Try to kill it.",
+      "correct_ans": "",
+      "discussion": "What would you most likely do? Are there any other common household pests--like spiders—-that you find worse than cockroaches? How do you usually react?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 37,
+    "fields": {
+      "person": ["PATRICIA"],
+      "q_num": 2,
+      "q_text": "With a year of training, which of these sports does she think she would be best at?",
+      "component": "secretCollection-080",
+      "ans_a": "Basketball.",
+      "ans_b": "Competitive swimming.",
+      "ans_c": "Gymnastics.",
+      "ans_d": "Wrestling.",
+      "correct_ans": "",
+      "discussion": "What sport are you best at? How often do you play sports? What sports do you enjoy watching? Who is your favorite athlete?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 38,
+    "fields": {
+      "person": ["SYLVIA"],
+      "q_num": 1,
+      "q_text": "Which of these people's talents and expertise would she most like to have?",
+      "component": "secretCollection-006",
+      "ans_a": "Angela Merkel.",
+      "ans_b": "Bill Gates.",
+      "ans_c": "J K Rowling.",
+      "ans_d": "Rihanna.",
+      "correct_ans": "",
+      "discussion": "Which would you choose? How would you use that person's talents and expertise? Are there any other famous people whose talents and expertise you would especially like to have? In what area do you think you already have the greatest talent and expertise?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 39,
+    "fields": {
+      "person": ["SYLVIA"],
+      "q_num": 2,
+      "q_text": "Which of these things is she most picky about?",
+      "component": "secretCollection-002",
+      "ans_a": "Her clothes.",
+      "ans_b": "Her phone.",
+      "ans_c": "The decor of her home.",
+      "ans_d": "The food she eats.",
+      "correct_ans": "",
+      "discussion": "Which of these things are you most picky about? What specific preferences do you have about it?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 40,
+    "fields": {
+      "person": ["TRAVIS"],
+      "q_num": 1,
+      "q_text": "Which of these countries would he most like to live in for a year?",
+      "component": "secretCollection-030",
+      "ans_a": "Brazil.",
+      "ans_b": "Egypt.",
+      "ans_c": "India.",
+      "ans_d": "Italy.",
+      "correct_ans": "",
+      "discussion": "Which of these countries do you most want to try living in? What is the most exotic place you have ever traveled to?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 41,
+    "fields": {
+      "person": ["TRAVIS"],
+      "q_num": 2,
+      "q_text": "Which of these jobs would he most like to have?",
+      "component": "secretCollection-020",
+      "ans_a": "Fashion model.",
+      "ans_b": "Film director.",
+      "ans_c": "Gigolo.",
+      "ans_d": "Travel writer.",
+      "correct_ans": "",
+      "discussion": "Which of these jobs would you choose if you had to do one of them? What do you consider to be your dream job?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 42,
+    "fields": {
+      "person": ["VICTOR"],
+      "q_num": 1,
+      "q_text": "Which of these things would he be most willing to get up early specifically to do?",
+      "component": "secretCollection-038",
+      "ans_a": "Earn an easy NT$2000 for an hour of work.",
+      "ans_b": "Eat something special for breakfast.",
+      "ans_c": "See a spectacular sunrise.",
+      "ans_d": "Watch a sporting event he was interested in on TV.",
+      "correct_ans": "",
+      "discussion": "Which of these things, or similar things, do you do? Do you ever get up early specifically to do something you enjoy?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 43,
+    "fields": {
+      "person": ["VICTOR"],
+      "q_num": 2,
+      "q_text": "Which of these places would he most likely choose for a first date?",
+      "component": "secretCollection-075",
+      "ans_a": "A bar with live music.",
+      "ans_b": "A fancy restaurant.",
+      "ans_c": "A dance club.",
+      "ans_d": "A quiet café.",
+      "correct_ans": "",
+      "discussion": "What type of place would you probably choose for a first date? Have you ever had a very good, or a very bad first date? What tips do you know for having a successful first date?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 44,
+    "fields": {
+      "person": ["VIOLET"],
+      "q_num": 1,
+      "q_text": "If she had to completely give up one of these things for the rest of her life, which would she choose?",
+      "component": "secretCollection-037",
+      "ans_a": "Communicating in English.",
+      "ans_b": "Any kind of sweet food.",
+      "ans_c": "Mobile phones.",
+      "ans_d": "Shoes.",
+      "correct_ans": "",
+      "discussion": "Which would you give up? Have you ever sworn to give up something for life?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 45,
+    "fields": {
+      "person": ["VIOLET"],
+      "q_num": 2,
+      "q_text": "Which of these male celebrities does she find the most attractive?",
+      "component": "secretCollection-017",
+      "ans_a": "Brad Pitt.",
+      "ans_b": "Bruno Mars.",
+      "ans_c": "Justin Bieber.",
+      "ans_d": "Ryan Gosling.",
+      "correct_ans": "",
+      "discussion": "Which of the celebrities do you find most appealing? Which do you think is most handsome? Which one would you most like to trade places with for one year?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 46,
+    "fields": {
+      "person": ["YULANG"],
+      "q_num": 1,
+      "q_text": "Which of these foreign cuisines does he like best?",
+      "component": "secretCollection-033",
+      "ans_a": "French.",
+      "ans_b": "Indian.",
+      "ans_c": "Korean.",
+      "ans_d": "Vietnamese.",
+      "correct_ans": "",
+      "discussion": "How much of each of these cuisines have you had? What is your favorite dish in each?"
+    }
+  },
+  {
+    "model": "minefield.Question",
+    "pk": 47,
+    "fields": {
+      "person": ["YULANG"],
+      "q_num": 2,
+      "q_text": "Which of these stars would he most like to have as a girlfriend?",
+      "component": "secretCollection-012",
+      "ans_a": "Lin Chiling.",
+      "ans_b": "Rainie Yang.",
+      "ans_c": "Rihanna.",
+      "ans_d": "Taylor Swift.",
+      "correct_ans": "",
+      "discussion": "Whom would you most like have as a friend or girlfriend? What other celebrity would you like to date if you had a chance?"
+    }
+  }
+]

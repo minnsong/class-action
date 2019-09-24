@@ -1,0 +1,227 @@
+[
+  {
+    "model": "minefield.Person",
+    "pk": 0,
+    "fields": {
+      "name": "AMY_XIA",
+      "type": "student",
+      "password": ""
+    }
+  },
+  {
+    "model": "minefield.Person",
+    "pk": 1,
+    "fields": {
+      "name": "AMY_WANG",
+      "type": "student",
+      "password": ""
+    }
+  },
+  {
+    "model": "minefield.Person",
+    "pk": 2,
+    "fields": {
+      "name": "ANA",
+      "type": "student",
+      "password": ""
+    }
+  },
+  {
+    "model": "minefield.Person",
+    "pk": 3,
+    "fields": {
+      "name": "ANDREW",
+      "type": "student",
+      "password": ""
+    }
+  },
+  {
+    "model": "minefield.Person",
+    "pk": 4,
+    "fields": {
+      "name": "CHANG",
+      "type": "student",
+      "password": ""
+    }
+  },
+  {
+    "model": "minefield.Person",
+    "pk": 5,
+    "fields": {
+      "name": "CHUCK",
+      "type": "student",
+      "password": ""
+    }
+  },
+  {
+    "model": "minefield.Person",
+    "pk": 6,
+    "fields": {
+      "name": "CINDY",
+      "type": "student",
+      "password": ""
+    }
+  },
+  {
+    "model": "minefield.Person",
+    "pk": 7,
+    "fields": {
+      "name": "DUNCAN",
+      "type": "student",
+      "password": ""
+    }
+  },
+  {
+    "model": "minefield.Person",
+    "pk": 8,
+    "fields": {
+      "name": "ELAINE",
+      "type": "student",
+      "password": ""
+    }
+  },
+  {
+    "model": "minefield.Person",
+    "pk": 9,
+    "fields": {
+      "name": "FRANK",
+      "type": "student",
+      "password": ""
+    }
+  },
+  {
+    "model": "minefield.Person",
+    "pk": 10,
+    "fields": {
+      "name": "JASMINE",
+      "type": "student",
+      "password": ""
+    }
+  },
+  {
+    "model": "minefield.Person",
+    "pk": 11,
+    "fields": {
+      "name": "JASON",
+      "type": "student",
+      "password": ""
+    }
+  },
+  {
+    "model": "minefield.Person",
+    "pk": 12,
+    "fields": {
+      "name": "KEVIN",
+      "type": "student",
+      "password": ""
+    }
+  },
+  {
+    "model": "minefield.Person",
+    "pk": 13,
+    "fields": {
+      "name": "KO",
+      "type": "student",
+      "password": ""
+    }
+  },
+  {
+    "model": "minefield.Person",
+    "pk": 14,
+    "fields": {
+      "name": "LAVONNE",
+      "type": "student",
+      "password": ""
+    }
+  },
+  {
+    "model": "minefield.Person",
+    "pk": 15,
+    "fields": {
+      "name": "LULU",
+      "type": "student",
+      "password": ""
+    }
+  },
+  {
+    "model": "minefield.Person",
+    "pk": 16,
+    "fields": {
+      "name": "MONICA",
+      "type": "student",
+      "password": ""
+    }
+  },
+  {
+    "model": "minefield.Person",
+    "pk": 17,
+    "fields": {
+      "name": "MORRIS",
+      "type": "student",
+      "password": ""
+    }
+  },
+  {
+    "model": "minefield.Person",
+    "pk": 18,
+    "fields": {
+      "name": "PATRICIA",
+      "type": "student",
+      "password": ""
+    }
+  },
+  {
+    "model": "minefield.Person",
+    "pk": 19,
+    "fields": {
+      "name": "SYLVIA",
+      "type": "student",
+      "password": ""
+    }
+  },
+  {
+    "model": "minefield.Person",
+    "pk": 20,
+    "fields": {
+      "name": "TRAVIS",
+      "type": "student",
+      "password": ""
+    }
+  },
+  {
+    "model": "minefield.Person",
+    "pk": 21,
+    "fields": {
+      "name": "VICTOR",
+      "type": "student",
+      "password": ""
+    }
+  },
+  {
+    "model": "minefield.Person",
+    "pk": 22,
+    "fields": {
+      "name": "VIOLET",
+      "type": "student",
+      "password": ""
+    }
+  },
+  {
+    "model": "minefield.Person",
+    "pk": 23,
+    "fields": {
+      "name": "YULANG",
+      "type": "student",
+      "password": ""
+    }
+  },
+  {
+    "model": "minefield.Person",
+    "pk": 24,
+    "fields": {
+      "name": "MAX",
+      "type": "teacher",
+      "password": "123"
+    }
+  }
+]

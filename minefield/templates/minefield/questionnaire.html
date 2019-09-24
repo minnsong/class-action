@@ -1,0 +1,19 @@
+<form action="{% url 'minefield:guess' student_name %}" method="post">
+{% csrf_token %}
+{% for q in question_list %}
+	<h2>{{ q.person }}&nbsp{{ q.q_num }}</h2>	
+	<h4>{{ q.q_text }}</h4>
+	<input type="radio" name="choice" id="{{ q.person }}_{{ q.q_num }}_a" value="{{ q.id }}_a">
+	<label for="{{ q.person }}_{{ q.q_num }}_a">{{ q.ans_a }}</label><br>
+	<input hidden type="radio" name="choice" id="{{ q.person }}_{{ q.q_num }}_b" value="{{ q.id }}_b">
+	<label hidden for="{{ q.person }}_{{ q.q_num }}_a">{{ q.ans_b }}</label><br>
+	<input type="radio" name="choice" id="{{ q.person }}_{{ q.q_num }}_c" value="{{ q.id }}_c">
+	<label for="{{ q.person }}_{{ q.q_num }}_a">{{ q.ans_c }}</label><br>
+	<input type="radio" name="choice" id="{{ q.person }}_{{ q.q_num }}_d" value="{{ q.id }}_d">
+	<label for="{{ q.person }}_{{ q.q_num }}_a">{{ q.ans_d }}</label><br>
+	<p>{{ q.discussion }}</p>
+	<input type="submit" value="Select">
+	<h2></h2>
+{% endfor %}
+
+</form>
