@@ -9,6 +9,7 @@ urlpatterns = [
 	path('signin/teacher/login/', views.login, name='login'),
 	path('s/<student_name>/', views.questionnaire, name='questionnaire'),
 	path('s/<student_name>/guess/', views.guess, name='guess'),
-	path('t/<username>/', views.init, name='init'),
-	path('t/<teacher_name>/register/', views.register, name='register'),
+	path('t/<teacher_name>/', views.init, name='init'),
+	path('t/<teacher_name>/attendance/', views.take_attendance, name='attendance'),
+	path('t/<teacher_name>/teams/', views.rearrange_teams, name='teams'),
 ]

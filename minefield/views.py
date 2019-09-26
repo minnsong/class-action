@@ -1,4 +1,5 @@
 import random
+import minefield.teams as team
 
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -34,21 +35,21 @@ def arrange():
 	print('teams=' + str(teams))
 
 
-def init(request, username):
+def init(request, teacher_name):
 	global absent_students
 	student_objects = Person.objects.filter(type='student').order_by('name')
 	for s in student_objects:
 		absent_students.append(s.name)
 	context = {
 		'student_list': absent_students,
-		'teacher_name': username
+		'teacher_name': teacher_name
 	}
 	print('In init()..absent_students=' + str(absent_students))
-	return render(request, 'minefield/attendance.html', context)
+	return render(request, 'minefield/class.html', context)
 	# return HttpResponse("This is a list of students in %s's class." % teacher_name)
 
 
-def register(request, teacher_name):
+def take_attendance(request, teacher_name):
 	global absent_students
 	global team_queue
 	global teams
@@ -71,9 +72,28 @@ def register(request, teacher_name):
 	print('team_queue=' + str(team_queue))
 	arrange()
 	print('teams=' + str(teams))
-	teams = rearrange(teams)
+	# teams = rearrange(teams)
+	# print('teams(rearranged)=' + str(teams))
+	# rearrange_teams(request)
+	teams_items = teams.items()
+	context = {
+		'teacher_name': teacher_name,
+		'team_list': teams_items
+	}
+	print('teams_items=' + str(teams_items))
+	# return HttpResponse('After registering students')
+	return render(request, 'minefield/teams.html', context);
+
+def rearrange_teams(request, teacher_name):
+	global teams
+	teams = team.rearrange_pairs(teams)
 	print('teams(rearranged)=' + str(teams))
-	return HttpResponse('After registering students')
+	teams_items = teams.items()
+	context = {
+		'teacher_name': teacher_name,
+		'team_list': teams_items
+	}
+	return render(request, 'minefield/teams.html', context)
 	
 
 def signin(request, person_type):

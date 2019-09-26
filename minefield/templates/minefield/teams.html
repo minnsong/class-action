@@ -1,0 +1,10 @@
+{% for t in team_list %}
+	<h2>Team #{{ t.0 }}</h2>
+	{% for s in t.1 %}
+		<h4>{{ s }}</h4>
+	{% endfor %}
+{% endfor %}
+<form action="{% url 'minefield:teams' teacher_name %}" method="post">
+{% csrf_token %}
+	<button type="submit">Re-arrange</button>
+</form>
