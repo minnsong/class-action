@@ -12,4 +12,5 @@ urlpatterns = [
 	path('t/<teacher_name>/', views.init, name='init'),
 	path('t/<teacher_name>/attendance/', views.take_attendance, name='attendance'),
 	path('t/<teacher_name>/teams/', views.rearrange_teams, name='teams'),
+	path('c/guess/<hit_landmine>/', views.score, name='score'),
 ]
