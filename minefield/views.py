@@ -13,22 +13,23 @@ from .forms import LoginForm
 from .teams import rearrange_pairs as rearrange
 
 absent_students = []
-present_student = []
+present_students = []
+student_score = {}
 teams = {}
 current_team = -1
 question_list = {}
-question_state = {}
+questionnaire_state = {}
 f_live_guess = False
 penalty = 1
 
 
 def arrange_teams():
-	global present_student
+	global present_students
 	global teams
-	random.shuffle(present_student)
+	random.shuffle(present_students)
 	team_num = 0
 	teams[team_num] = []
-	for s in present_student:
+	for s in present_students:
 		if len(teams[team_num]) < 2:
 			teams[team_num].append(s)
 		else:
@@ -49,6 +50,20 @@ def check_team_eligible(team_num, q_person):
 	return True
 
 
+def disable_answer(q_id, ans_letter):
+	global questionnaire_state
+	for a in questionnaire_state[q_id]['disabled_ans']:
+		if a == ans_letter:
+			return			# letter already present, don't add again
+	questionnaire_state[q_id]['disabled_ans'].append(ans_letter)
+
+
+def disable_question(q_id):
+	global questionnaire_state
+	if len(questionnaire_state[q_id]['disabled_ans'] >= 3):
+		questionnaire_state[q_id]['show_q'] = False
+
+		
 def get_team_num(student_name):
 	for t in teams:
 		if student_name in teams.get(t):
@@ -56,16 +71,30 @@ def get_team_num(student_name):
 	return -1 
 
 
-def init(request, teacher_name):
+def init_questionnaire():
+	global question_list
+	global questionnaire_state
+	question_list = Question.objects.order_by('person', 'q_num')
+	# add pickling and write to disk : see Notes.app
+	# question_list = question_queryset.values()
+	print('In questionnaire()..question_list=' + str(question_list))
+	for q in question_list:
+		# q.update({ 'show_q': True, 'disabled_ans': [] })
+		questionnaire_state.update({q.id: {'show_q': True, 'disabled_ans': []}})
+	
+	
+def init_class(request, teacher_name):
 	global absent_students
+	global student_score
 	student_objects = Person.objects.filter(type='student').order_by('name')
 	for s in student_objects:
 		absent_students.append(s.name)
+		student_score.update({s.id: {'name': s.name, 'score': 0}})
 	context = {
 		'student_list': absent_students,
 		'teacher_name': teacher_name
 	}
-	print('In init()..absent_students=' + str(absent_students))
+	print('In init_class()..absent_students=' + str(absent_students))
 	return render(request, 'minefield/class.html', context)
 	# return HttpResponse("This is a list of students in %s's class." % teacher_name)
 
@@ -79,20 +108,21 @@ def set_next_team():
 
 def take_attendance(request, teacher_name):
 	global absent_students
-	global present_student
+	global present_students
 	global teams
 	print('POST=' + str(request.POST))
 	if request.method == 'POST':
-		present_students = request.POST.dict()
+		# present_students = request.POST.dict()
+		students = request.POST.dict()
 		absent_temp = []
 		for s in absent_students:
-			if ('s_' + s) in present_students:
-				present_student.insert(len(present_student), s)
+			if ('s_' + s) in students:
+				present_students.insert(len(present_students), s)
 			else:
 				absent_temp.append(s)
 		absent_students = absent_temp
 	print('absent_students=' + str(absent_students))
-	print('present_student=' + str(present_student))
+	print('present_students=' + str(present_students))
 	arrange_teams()
 	set_next_team()
 	print('teams=' + str(teams))
@@ -105,8 +135,14 @@ def take_attendance(request, teacher_name):
 		'team_list': teams_items
 	}
 	print('teams_items=' + str(teams_items))
+	init_questionnaire()
 	# return HttpResponse('After registering students')
 	return render(request, 'minefield/teams.html', context);
+
+
+def show_students(request, teacher_name):
+	return HttpResponse('Add/drop students here')
+
 
 def rearrange_teams(request, teacher_name):
 	global teams
@@ -121,6 +157,9 @@ def rearrange_teams(request, teacher_name):
 	
 
 def score(request, hit_landmine):
+	global f_live_guess
+	f_live_guess = False
+	student_name = request.POST['student_name']
 	if hit_landmine == 'HIT':
 		# deduct penalty from team members' score
 		# increment penalty
@@ -161,27 +200,37 @@ def login(request):
 			password = form.cleaned_data['password']
 			if Person.objects.filter(name=teacher_name, password=password):
 				# return HttpResponseRedirect('/minefield/t/' + teacher_name + '/')
-				return HttpResponseRedirect(reverse('minefield:init', args=(teacher_name,)))
+				return HttpResponseRedirect(reverse('minefield:init_class', args=(teacher_name,)))
 	else:
 		form = LoginForm()
 	return render(request, 'minefield/signin_teacher.html', {'form': form})
 
 
-def questionnaire(request, student_name):
+def show_questionnaire(request, student_name):
 	global question_list
-	global question_state
-	question_list  = Question.objects.order_by('person', 'q_num')
+	global questionnaire_state
+	# question_list  = Question.objects.order_by('person', 'q_num')
 	# add pickling and write to disk : see Notes.app
 	# question_list = question_queryset.values()
-	print('In questionnaire()..question_list=' + str(question_list))
-	for q in question_list:
+	# print('In questionnaire()..question_list=' + str(question_list))
+	# for q in question_list:
 		# q.update({ 'show_q': True, 'disabled_ans': [] })
-		question_state.update({q.id: {'show_q': True, 'disabled_ans': []}})
+		# questionnaire_state.update({q.id: {'show_q': True, 'disabled_ans': []}})
 	context = {
 		'question_list': question_list,
 		'student_name': student_name
 	}
-	print('question_state=' + str(question_state))
+	# print('questionnaire_state=' + str(questionnaire_state))
+	return render(request, 'minefield/questionnaire.html', context)
+
+
+def show_questionnaire_class(request):
+	global question_list
+	global questionnaire_state
+	context = {
+		'question_list': question_list,
+		'questionnaire_state': questionnaire_state
+	}
 	return render(request, 'minefield/questionnaire.html', context)
 
 
@@ -192,7 +241,6 @@ def get_team_name(student_name):
 	print('In get_team_name()..' + student_name)
 	for t in teams:
 		for s in teams[t]:
-			print('s=' + s)
 			if s == student_name:
 				team_name = ' & '.join(teams[t])
 				return team_name
@@ -202,23 +250,26 @@ def get_team_name(student_name):
 
 def check_guess_valid(q_id, ans_letter):
 	global question_list
-	global question_state
+	global questionnaire_state
 	print('In check_guess_valid()..q_id=' + str(q_id) + ' ans_letter=' + ans_letter)
 	for q in question_list:
 		print(' q.id=' + str(q.id) + ' type(q.id)=' + str(type(q.id)) + ' type(q_id)=' + str(type(q_id)))
 		if q.id == q_id:
-			print('show_q=' + str(question_state[q_id].get('show_q')) + ' disabled_ans=' + str(question_state[q_id].get('disabled_ans')))
-			if question_state[q_id].get('show_q') == True and ans_letter not in question_state[q_id].get('disabled_ans'):
+			print('show_q=' + str(questionnaire_state[q_id].get('show_q')) + ' disabled_ans=' + str(questionnaire_state[q_id].get('disabled_ans')))
+			if questionnaire_state[q_id].get('show_q') == True and ans_letter not in questionnaire_state[q_id].get('disabled_ans'):
 				return True 
 	return False
 
 
-def guess(request, student_name):
+def show_guess(request, student_name):
 	global question_list
 	global f_live_guess
 	try:
-		guess = request.POST['choice']
-		num_ans = guess.split('_', 1)
+		choice = request.POST['choice']
+		for_type = request.POST['for_type']
+		if for_type == 'c':
+			student_name = request.POST['student_name']
+		num_ans = choice.split('_', 1)
 		guess_qid = int(num_ans[0])
 		guess_letter = num_ans[1]
 		q_person = Question.objects.get(pk=guess_qid).person
@@ -249,8 +300,13 @@ def guess(request, student_name):
 			return render(request, 'minefield/error.html', context)
 		team_name = get_team_name(student_name)
 		if check_guess_valid(guess_qid, guess_letter) == True:
+			# update questionnaire state
+			# questionnaire_state[guess_qid]['disabled_ans'].append(guess_letter)
+			disable_answer(guess_qid, guess_letter)
+			print('disabled_ans=' + str(questionnaire_state[guess_qid].get('disabled_ans')))
 			f_live_guess = True
 			context = {
+				'for_type': for_type,
 				'team': team_name,
 				'student_name': student_name,
 				'target_person': q_person,
@@ -259,7 +315,12 @@ def guess(request, student_name):
 				'guess_letter': guess_letter.upper()
 			}
 		else:
-			return HttpResponse('Your guess has already been eliminated. Please make another.')
+			# return HttpResponse('Your guess has already been eliminated. Please make another.')
+			context = {
+				'student_name': student_name,
+				'msg': 'Your guess has already been eliminated. Please make another.'
+			}
+			return render(request, 'minefield/error.html', context)
 	# return HttpResponse("%s's answer was %s, score = %d" % (student_name, selected_choice, count))
 	return render(request, 'minefield/guess.html', context) 
 

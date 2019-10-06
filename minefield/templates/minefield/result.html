@@ -2,5 +2,8 @@
 {% if hit == True %}
 	<img src="{% static "minefield/explosion.png" %}" alt="explosion">
 {% else %}
-	<img src="{% static "minefield/safe.png" %}" alt="safe">
+	<img src="{% static "minefield/safe.jpg" %}" alt="safe">
 {% endif %}
+<form action="{% url 'minefield:questionnaire' student_name %}" method="post">
+	<input type="submit" value="OK">
+</form>

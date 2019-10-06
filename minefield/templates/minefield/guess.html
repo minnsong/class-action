@@ -10,6 +10,11 @@
 <h1 style="color:blue">{{ target_person }}, is this the correct answer?</h1>
 <form method="post">
 {% csrf_token %}
-	<button type="submit" formaction="{% url 'minefield:score' 'HIT' %}">Yes</button>
-	<button type="submit" formaction="{% url 'minefield:score' 'SAFE' %}">No</button>
+	<input type="hidden" name="student_name" value={{ student_name }}>
+	{% if for_type == 'c' %}
+		<button type="submit" formaction="{% url 'minefield:score' 'HIT' %}">Yes</button>
+		<button type="submit" formaction="{% url 'minefield:score' 'SAFE' %}">No</button>
+	{% else %}
+		<button type="submit" formaction="{% url 'minefield:questionnaire_student' student_name %}">OK</button>
+	{% endif %}
 </form>
