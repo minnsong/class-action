@@ -12,8 +12,7 @@ from .forms import LoginForm
 
 from .teams import rearrange_pairs as rearrange
 
-absent_students = []
-present_students = []
+students = []
 student_score = {}
 teams = {}
 current_team = -1
@@ -24,17 +23,19 @@ penalty = 1
 
 
 def arrange_teams():
-	global present_students
+	global students
 	global teams
-	random.shuffle(present_students)
+	random.shuffle(students)
 	team_num = 0
 	teams[team_num] = []
-	for s in present_students:
-		if len(teams[team_num]) < 2:
-			teams[team_num].append(s)
-		else:
-			team_num += 1
-			teams[team_num] = [s]
+	for s in students:
+		if s['present'] == True:
+			if len(teams[team_num]) < 2:
+				teams[team_num].append(s['name'])
+			else:
+				team_num += 1
+				# teams[team_num] = [s]
+				teams[team_num] = [s['name']]
 	if len(teams[team_num]) == 1:
 		teams[0].append(teams[team_num][0])
 		teams.pop(team_num)
@@ -84,17 +85,17 @@ def init_questionnaire():
 	
 	
 def init_class(request, teacher_name):
-	global absent_students
-	global student_score
+	global students
+	name_list = []
 	student_objects = Person.objects.filter(type='student').order_by('name')
 	for s in student_objects:
-		absent_students.append(s.name)
-		student_score.update({s.id: {'name': s.name, 'score': 0}})
+		students.append({'name': s.name, 'present': False, 'score': 0})
+		name_list.append(s.name)
 	context = {
-		'student_list': absent_students,
+		'student_list': name_list,
 		'teacher_name': teacher_name
 	}
-	print('In init_class()..absent_students=' + str(absent_students))
+	# print('In init_class()..students=' + str(students))
 	return render(request, 'minefield/class.html', context)
 	# return HttpResponse("This is a list of students in %s's class." % teacher_name)
 
@@ -107,22 +108,20 @@ def set_next_team():
 	
 
 def take_attendance(request, teacher_name):
-	global absent_students
-	global present_students
+	global students
 	global teams
 	print('POST=' + str(request.POST))
 	if request.method == 'POST':
-		# present_students = request.POST.dict()
-		students = request.POST.dict()
-		absent_temp = []
-		for s in absent_students:
-			if ('s_' + s) in students:
-				present_students.insert(len(present_students), s)
+		# students = request.POST.dict()
+		present_students = request.POST.dict()
+		# absent_temp = []
+		for s in students:
+			if ('s_' + s['name']) in present_students:
+				s['present'] = True
 			else:
-				absent_temp.append(s)
-		absent_students = absent_temp
-	print('absent_students=' + str(absent_students))
-	print('present_students=' + str(present_students))
+				print(s['name'] + ' is absent')
+		# absent_students = absent_temp
+	print('students=' + str(students))
 	arrange_teams()
 	set_next_team()
 	print('teams=' + str(teams))
@@ -141,6 +140,7 @@ def take_attendance(request, teacher_name):
 
 
 def show_students(request, teacher_name):
+		
 	return HttpResponse('Add/drop students here')
 
 
