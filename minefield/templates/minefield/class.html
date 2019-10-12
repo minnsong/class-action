@@ -1,8 +1,8 @@
 <form action="{% url 'minefield:attendance' teacher_name %}" method="post">
 {% csrf_token %}
 <h2>Select the students who are present:</h2>
-{% for s in student_list %}
+{% for s in student_names %}
 	<input type="checkbox" name="s_{{ s }}" value={{ s }}>{{ s }}<br>
 {% endfor %}
-<input type="submit" value="submit">
+<input type="submit" value="OK">
 </form>

@@ -2,18 +2,21 @@ import random
 import minefield.teams as team
 
 from django.shortcuts import render
+from django.shortcuts import redirect
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.forms import Form
 
 from .models import Person
 from .models import Question
+from .forms import AddDropForm
 from .forms import LoginForm
 
 from .teams import rearrange_pairs as rearrange
 
 students = []
-student_score = {}
+student_names = []
 teams = {}
 current_team = -1
 question_list = {}
@@ -78,7 +81,7 @@ def init_questionnaire():
 	question_list = Question.objects.order_by('person', 'q_num')
 	# add pickling and write to disk : see Notes.app
 	# question_list = question_queryset.values()
-	print('In questionnaire()..question_list=' + str(question_list))
+	# print('In questionnaire()..question_list=' + str(question_list))
 	for q in question_list:
 		# q.update({ 'show_q': True, 'disabled_ans': [] })
 		questionnaire_state.update({q.id: {'show_q': True, 'disabled_ans': []}})
@@ -86,13 +89,13 @@ def init_questionnaire():
 	
 def init_class(request, teacher_name):
 	global students
-	name_list = []
+	global student_names
 	student_objects = Person.objects.filter(type='student').order_by('name')
 	for s in student_objects:
 		students.append({'name': s.name, 'present': False, 'score': 0})
-		name_list.append(s.name)
+		student_names.append(s.name)
 	context = {
-		'student_list': name_list,
+		'student_names': student_names,
 		'teacher_name': teacher_name
 	}
 	# print('In init_class()..students=' + str(students))
@@ -136,24 +139,97 @@ def take_attendance(request, teacher_name):
 	print('teams_items=' + str(teams_items))
 	init_questionnaire()
 	# return HttpResponse('After registering students')
-	return render(request, 'minefield/teams.html', context);
+	# return render(request, 'minefield/teams.html', context);
+	return HttpResponseRedirect(reverse('minefield:show_teams', args=(teacher_name,)))
 
 
 def show_students(request, teacher_name):
-		
-	return HttpResponse('Add/drop students here')
+	global student_names
+	absent = [i for i in student_names if i in [s['name'] for s in students if s['name'] == i and s['present'] == False]] 
+	present = [i for i in student_names if i in [s['name'] for s in students if s['name'] == i and s['present'] == True]]
+	present_tuples = []
+	for p in present:
+		present_tuples.append((p, p))
+	form = AddDropForm()
+	form.fields['chosen_student'].choices = present_tuples
+	context = {
+		'teacher_name': teacher_name,
+		'absent': absent,
+		# 'present': present,
+		'students': present_tuples,
+		'form': form
+	}
+	# return HttpResponse('Add/drop students here')
+	return render(request, 'minefield/update_class.html', context)
 
 
-def rearrange_teams(request, teacher_name):
+def add_student(request, teacher_name):
+	global students
 	global teams
-	teams = team.rearrange_pairs(teams)
-	print('teams(rearranged)=' + str(teams))
+	if request.method == 'POST' and 'add' in request.POST:
+		print('request.body=' + str(request.body))
+		form = Form(request.POST)
+		if form.is_valid():
+			# added = request.POST['add']
+			added = form.cleaned_data['add']
+			for s in students:
+				if s['name'] == added:
+					s['present'] = True
+					teams = team.add_student(teams, s['name'])
+	# return HttpResponse('Added students. Redirect to teams listing.')
+	return HttpResponseRedirect(reverse('minefield:show_teams', args=(teacher_name,)))
+
+
+def drop_student(request, teacher_name):
+	global students
+	global teams
+	dropped = ''
+	if request.method == 'POST':
+		present = [i for i in student_names if i in [s['name'] for s in students if s['name'] == i and s['present'] == True]]
+		present_tuples = []
+		for p in present:
+			present_tuples.append((p, p))
+		print('request.POST=' + str(request.POST))
+		form = AddDropForm(request.POST)
+		form.fields['chosen_student'].choices = present_tuples
+		# form = AddDropForm()
+		# print('POST successful. form.is_bound()=' + str(form.is_bound))
+		# print('form=' + str(form))
+		# print('form.errors=' + str(form.errors))
+		if form.is_valid():
+			dropped = form.cleaned_data['chosen_student']
+			print('dropped=' + dropped)
+			for s in students:
+				if s['name'] == dropped:
+					s['present'] = False
+					# teams = team.drop_student(teams, s['name'])[0]	
+					team.drop_student(teams, s['name'])
+					print('teams(after drop)=' + str(teams))
+					return HttpResponseRedirect(reverse('minefield:show_teams', args=(teacher_name,)))
+	return HttpResponse('Dropped ' + str(dropped) + '. Redirect to teams listing.')
+
+
+def show_teams(request, teacher_name):
+	global teams
 	teams_items = teams.items()
 	context = {
 		'teacher_name': teacher_name,
 		'team_list': teams_items
 	}
 	return render(request, 'minefield/teams.html', context)
+
+
+def rearrange_teams(request, teacher_name):
+	global teams
+	teams = team.rearrange_pairs(teams)
+	print('teams(rearranged)=' + str(teams))
+	# teams_items = teams.items()
+	# context = {
+		# 'teacher_name': teacher_name,
+		# 'team_list': teams_items
+	# }
+	# return render(request, 'minefield/teams.html', context)
+	return HttpResponseRedirect(reverse('minefield:show_teams', args=(teacher_name,)))
 	
 
 def score(request, hit_landmine):
@@ -261,9 +337,17 @@ def check_guess_valid(q_id, ans_letter):
 	return False
 
 
-def show_guess(request, student_name):
+def show_guess(request, new_context={}):
+	# return HttpResponse('Display student guess here')
+	context = {}
+	context.update(new_context)
+	return render(request, 'minefield/guess.html', context=context) 
+
+
+def submit_guess(request, student_name):
 	global question_list
 	global f_live_guess
+	context = {}
 	try:
 		choice = request.POST['choice']
 		for_type = request.POST['for_type']
@@ -322,7 +406,11 @@ def show_guess(request, student_name):
 			}
 			return render(request, 'minefield/error.html', context)
 	# return HttpResponse("%s's answer was %s, score = %d" % (student_name, selected_choice, count))
-	return render(request, 'minefield/guess.html', context) 
+	# return render(request, 'minefield/guess.html', context) 
+	# return HttpResponseRedirect(reverse('minefield:show_guess', args=(student_name, context,)))
+	# return redirect('minefield:show_guess', args=(student_name,), kwargs={'context': context})
+	response = show_guess(request, context)
+	return response
 
 
 def index(request):

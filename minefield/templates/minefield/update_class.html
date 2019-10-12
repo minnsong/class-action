@@ -1,0 +1,18 @@
+{% extends "minefield/navbar.html" %}
+{% block content %}
+<h2>Absent students</h2>
+<form action="{% url 'minefield:add_student' teacher_name %}" method="post">
+{% csrf_token %}
+	{% for s in absent %}
+		<input type="radio" name="add" value="{{ s }}">{{ s }}<br>
+	{% endfor %}
+<input type="submit" value="Add">
+</form>
+<br>
+<h2>Present students</h2>
+<form action="{% url 'minefield:drop_student' teacher_name %}" method="post">
+	{% csrf_token %}
+	{{ form }}
+<input type="submit" value="Drop">
+</form>
+{% endblock %}

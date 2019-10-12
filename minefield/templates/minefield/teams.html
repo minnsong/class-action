@@ -7,7 +7,7 @@
 	{% endfor %}
 	<br/>
 {% endfor %}
-<form action="{% url 'minefield:teams' teacher_name %}" method="post">
+<form action="{% url 'minefield:rearrange_teams' teacher_name %}" method="post">
 {% csrf_token %}
 	<button type="submit">Re-arrange</button>
 </form>
