@@ -1,0 +1,5 @@
+{% extends "minefield/base.html" %}
+{% block content %}
+	<h2>Add student</h2>
+	<form action="{% url 'minefield:add_students' teacher_name %}" method="post">
+		{% for s in

@@ -1,0 +1,10 @@
+{% extends "minefield/base.html" %}
+{% block content %}
+<div class="main">
+	<h1>SCORES</h1>
+	<h3 style="color:red">CURRENT PENALTY: -{{ penalty }}</h3>
+	{% for s in student_list %}
+		<h2>{{ s.name }}: {{ s.score }}</h2>
+	{% endfor %}
+</div>
+{% endblock %}

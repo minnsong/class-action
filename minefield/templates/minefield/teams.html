@@ -1,8 +1,9 @@
-{% extends "minefield/navbar.html" %}
+{% extends "minefield/base.html" %}
 {% block content %}
-{% for t in team_list %}
-	<h2>Team #{{ t.0 }}</h2>
-	{% for s in t.1 %}
+<div class="main">
+{% for t in teams %}
+	<h2>Team #{{ forloop.counter0 }}</h2>
+	{% for s in t %}
 		<h4>{{ s }}</h4>
 	{% endfor %}
 	<br/>
@@ -11,4 +12,5 @@
 {% csrf_token %}
 	<button type="submit">Re-arrange</button>
 </form>
+</div>
 {% endblock %}

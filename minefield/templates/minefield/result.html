@@ -4,6 +4,9 @@
 {% else %}
 	<img src="{% static "minefield/safe.jpg" %}" alt="safe">
 {% endif %}
-<form action="{% url 'minefield:questionnaire' student_name %}" method="post">
+<h1>{{ msg }}</h1>
+<form action="{% url 'minefield:discussion' teacher_name %}" method="post">
+	{% csrf_token %}
+	<input type="hidden" name="question_id" value={{ question_id }}>
 	<input type="submit" value="OK">
 </form>

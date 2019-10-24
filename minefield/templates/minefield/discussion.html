@@ -1,0 +1,8 @@
+<h2>{{ question.person }}&nbsp{{ question.q_num }}</h2>
+<h3>{{ question.q_text }}</h3>
+<h3>A: {{ question.ans_a }}</h3>
+<h3>B: {{ question.ans_b }}</h3>
+<h3>C: {{ question.ans_c }}</h3>
+<h3>D: {{ question.ans_d }}</h3>
+<h2 style="color:blue">{{ question.discussion }}</h2>
+<a href="{% url 'minefield:questions_t' teacher_name %}"><button>OK</button></a> 

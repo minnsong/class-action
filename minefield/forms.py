@@ -14,6 +14,9 @@ class AddDropForm(forms.Form):
 		choices=[],
 	)	
 
+class MasterForm(forms.Form):
+	question = forms.CharField(label='Question', max_length=256)
+		
 class LoginForm(forms.Form):
 	username = forms.CharField(label='Your name', max_length=32)
 	password = forms.CharField(label='Password', max_length=32, widget=forms.PasswordInput)

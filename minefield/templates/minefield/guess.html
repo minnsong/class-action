@@ -1,20 +1,47 @@
-<h2>{{ team }} chose this question, <span style="color:red">{{ target_person }} {{ question.q_num }}</span>:</h2>
+<h2>
+	{% for t in team %}
+		{% if forloop.last %}
+			{{ t }}
+		{% else %}
+			{{ t }} & 
+		{% endif %}
+	{% endfor %} 
+	chose this question, 
+	<span style="color:red">
+		{{ question.person }} {{ question.q_num }}
+	</span>
+	:
+</h2>
 <h3 style="color:red">{{ question.q_text }}</h3>
 <p>A: {{ question.ans_a }}</p>
 <p>B: {{ question.ans_b }}</p>
 <p>C: {{ question.ans_c }}</p>
 <p>D: {{ question.ans_d }}</p>
 <br/>
-<h2>They chose answer <span style="color:red">{{ guess_letter }}: {{ guess }}</span></h2>
+<h2>They chose answer 
+	<span style="color:red">
+		{% if guess_letter == 'a' %}
+			A: {{ question.ans_a }}
+		{% elif guess_letter == 'b' %}
+			B: {{ question.ans_b }}
+		{% elif guess_letter == 'c' %}
+			C: {{ question.ans_c }}
+		{% else %}
+			D: {{ question.ans_d }}
+		{% endif %}
+	</span>
+</h2>
 <br/>
-<h1 style="color:blue">{{ target_person }}, is this the correct answer?</h1>
+<h1 style="color:blue">{{ question.person }}, is this the correct answer?</h1>
 <form method="post">
 {% csrf_token %}
 	<input type="hidden" name="student_name" value={{ student_name }}>
-	{% if for_type == 'c' %}
-		<button type="submit" formaction="{% url 'minefield:score' 'HIT' %}">Yes</button>
-		<button type="submit" formaction="{% url 'minefield:score' 'SAFE' %}">No</button>
+	<input type="hidden" name="question_id" value={{ question.id }}>
+	<input type="hidden" name="guess_letter" value={{ guess_letter }}>
+	{% if for_type == 't' %}
+		<button type="submit" formaction="{% url 'minefield:result' teacher_name 'HIT' %}">Yes</button>
+		<button type="submit" formaction="{% url 'minefield:result' teacher_name 'SAFE' %}">No</button>
 	{% else %}
-		<button type="submit" formaction="{% url 'minefield:questionnaire_student' student_name %}">OK</button>
+		<button type="submit" formaction="{% url 'minefield:questions_s' student_name %}">OK</button>
 	{% endif %}
 </form>

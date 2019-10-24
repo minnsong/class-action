@@ -1,0 +1,28 @@
+{% extends "minefield/base.html" %}
+{% block content %}
+<div class="main">
+{% for q in question_list %}
+	<form action="{% url 'minefield:update_master' teacher_name %}" method="post">
+		{% csrf_token %}
+		<span><input type="hidden" name="question_id" value={{ q.id }}>
+		{% if q.show_q == True %}
+			<input type="hidden" name="action" value="hide">
+			<input type="submit" value="Hide">
+		{% else %}
+			<input type="hidden" name="action" value="show">
+			<input type="submit" value="Show">
+		{% endif %}
+		<h3>{{ q.person }}&nbsp{{ q.q_num }}: {{ q.q_text }}</h3>
+	</form>
+	<form action="{% url 'minefield:update_master' teacher_name %}" method="post">
+		{% csrf_token %}
+		</span>
+			<input type="checkbox" name="{{ q.id }}_{{ q.ans_a }}" value="a"> {{ A }}&nbsp;&nbsp;
+			<input type="checkbox" name="{{ q.id }}_{{ q.ans_b }}" value="b"> {{ B }}&nbsp;&nbsp;
+			<input type="checkbox" name="{{ q.id }}_{{ q.ans_c }}" value="c"> {{ C }}&nbsp;&nbsp;
+			<input type="checkbox" name="{{ q.id }}_{{ q.ans_d }}" value="d"> {{ D }}
+		<span>
+		<input type="submit" value="Update">
+	</form>
+{% endfor %}
+{% endblock %}

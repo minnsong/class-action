@@ -1,0 +1,40 @@
+<style>
+	body { margin: 0; }
+	.navbar {
+		overflow: hidden;
+		background-color: #333;
+		position: fixed;
+		top: 0;
+		width: 100%'
+	}
+	.navbar a {
+		float: left;
+		display: block;	
+		color: #f2f2f2;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+		font-size: 17px;
+	}
+	.navbar a:hover {
+		background: #ddd;
+		color: black;
+	}
+	.main {
+		padding: 16px;
+		margin-top: 30px;
+	}
+</style>
+{% if for_type == 't' %}
+	<div class="navbar">
+		<a href="{% url 'minefield:show_students' teacher_name %}">Students</a>
+		<a href="{% url 'minefield:game' teacher_name %}">Gameplay</a>
+		<a href="{% url 'minefield:scoreboard' teacher_name %}">Scoreboard</a>
+		<a href="{% url 'minefield:master' teacher_name %}">Questionnaire</a>
+	</div>
+{% else %}
+	<div class="navbar">
+		<a href="{% url 'minefield:questions_s' student_name %}">Refresh</a>
+	</div>
+{% endif %}
+{% block content %}{% endblock %}

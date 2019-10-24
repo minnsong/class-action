@@ -1,5 +1,5 @@
 <h2>{{ msg }}</h2>
-<form action="{% url 'minefield:questionnaire_student' student_name %}" method="post">
+<form action="{% url 'minefield:questions_s' student_name %}" method="post">
 {% csrf_token %}
 	<button type="submit" value="OK">OK</button>
 </form>

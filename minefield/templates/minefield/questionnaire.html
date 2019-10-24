@@ -1,20 +1,52 @@
+{% extends "minefield/base.html" %}
+{% block content %}
+<div class="main">
+{% if for_type == 't' %}
+	<h1>{{ msg }}</h1>
+{% endif %}
 {% for q in question_list %}
-	<h2>{{ q.person }}&nbsp{{ q.q_num }}</h2>	
-	<h4>{{ q.q_text }}</h4>
-	<form action="{% url 'minefield:submit_guess' student_name %}" method="post">
-	{% csrf_token %}
-		<input type="hidden" name="student_name" value={{ student_name }}>
-		<input type="hidden" name="for_type" value={{ for_type }}>
-		<input type="checkbox" name="choice" id="{{ q.person }}_{{ q.q_num }}_a" value="{{ q.id }}_b" checked>
-		<label for="{{ q.person }}_{{ q.q_num }}_a">{{ q.ans_a }}</label><br>
-		<input type="radio" name="choice" id="{{ q.person }}_{{ q.q_num }}_b" value="{{ q.id }}_b">
-		<label for="{{ q.person }}_{{ q.q_num }}_a">{{ q.ans_b }}</label><br>
-		<input type="radio" name="choice" id="{{ q.person }}_{{ q.q_num }}_c" value="{{ q.id }}_c">
-		<label for="{{ q.person }}_{{ q.q_num }}_a">{{ q.ans_c }}</label><br>
-		<input type="radio" name="choice" id="{{ q.person }}_{{ q.q_num }}_d" value="{{ q.id }}_d">
-		<label for="{{ q.person }}_{{ q.q_num }}_a">{{ q.ans_d }}</label><br>
-		<p>{{ q.discussion }}</p>
-		<input type="submit" value="Select">
-		<h2></h2>
-	</form>
+	{% if q.show_q == True %}
+		<h2>{{ q.person }}&nbsp{{ q.q_num }}</h2>
+		<h4>{{ q.q_text }}</h4>
+		{% if for_type == 's' %} 
+			<form action="{% url 'minefield:submit_guess_s' student_name %}" method="post">
+		{% else %}
+			<form action="{% url 'minefield:submit_guess_t' teacher_name %}" method="post">
+		{% endif %}
+			{% csrf_token %}
+			<input type="hidden" name="student_name" value={{ student_name }}>
+			<input type="hidden" name="for_type" value={{ for_type }}>
+			{% if 'a' in q.disabled_ans %}
+				<input type="checkbox" name="choice" id="{{ q.person }}_{{ q.q_num }}_a" value="{{ q.id }}_a" checked disabled>
+			{% else %} 
+				<input type="radio" name="choice" id="{{ q.person }}_{{ q.q_num }}_a" value="{{ q.id }}_a">
+			{% endif %}
+			<label for="{{ q.person }}_{{ q.q_num }}_a">{{ q.ans_a }}</label><br>
+			{% if 'b' in q.disabled_ans %}
+				<input type="checkbox" name="choice" id="{{ q.person }}_{{ q.q_num }}_a" value="{{ q.id }}_b" checked disabled>
+			{% else %} 
+				<input type="radio" name="choice" id="{{ q.person }}_{{ q.q_num }}_b" value="{{ q.id }}_b">
+			{% endif %}
+			<label for="{{ q.person }}_{{ q.q_num }}_a">{{ q.ans_b }}</label><br>
+			{% if 'c' in q.disabled_ans %}
+				<input type="checkbox" name="choice" id="{{ q.person }}_{{ q.q_num }}_a" value="{{ q.id }}_c" checked disabled>
+			{% else %} 
+				<input type="radio" name="choice" id="{{ q.person }}_{{ q.q_num }}_c" value="{{ q.id }}_c">
+			{% endif %}
+			<label for="{{ q.person }}_{{ q.q_num }}_a">{{ q.ans_c }}</label><br>
+			{% if 'd' in q.disabled_ans %}
+				<input type="checkbox" name="choice" id="{{ q.person }}_{{ q.q_num }}_a" value="{{ q.id }}_d" checked disabled>
+			{% else %} 
+				<input type="radio" name="choice" id="{{ q.person }}_{{ q.q_num }}_d" value="{{ q.id }}_d">
+			{% endif %}
+			<label for="{{ q.person }}_{{ q.q_num }}_a">{{ q.ans_d }}</label><br>
+			{% if q.show_dkn == True %}
+				<h4 style="color:blue">{{ q.discussion }}</h4>
+			{% endif %}
+			<input type="submit" value="Select">
+			<h2></h2>
+		</form>
+	{% endif %}
 {% endfor %}
+</div>
+{% endblock %}
