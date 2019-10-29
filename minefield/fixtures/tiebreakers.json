@@ -5,38 +5,6 @@
     "fields": {
       "person": "MAX",
       "q_num": 1,
-      "q_text": "Which of these compliments from a student would make him happiest?",
-      "component": "secretCollection-msx-029",
-      "ans_a": "I appreciate how hard you work preparing materials for our class.",
-      "ans_b": "You are a handsome guy.",
-      "ans_c": "You are a very good, professional teacher.",
-      "ans_d": "Your class is very interesting.",
-      "correct_ans": "ans_d",
-      "discussion": "What kinds of compliments make you happiest? Is there any compliment that you get that doesn't make you particularly happy?"
-    }
-  },
-  {
-    "model": "minefield.Tiebreaker",
-    "pk": 101,
-    "fields": {
-      "person": "MAX",
-      "q_num": 2,
-      "q_text": "Which of these words would he not use to describe himself?",
-      "component": "secretCollection-msx-005",
-      "ans_a": "Cynical.",
-      "ans_b": "Flexible.",
-      "ans_c": "Introverted.",
-      "ans_d": "Perfectionist.",
-      "correct_ans": "ans_b",
-      "discussion": "Do you think any of these words describe you?"
-    }
-  },
-  {
-    "model": "minefield.Tiebreaker",
-    "pk": 102,
-    "fields": {
-      "person": "MAX",
-      "q_num": 3,
       "q_text": "Which of these Taiwanese snacks does he refuse to eat?",
       "component": "secretCollection-msx-003",
       "ans_a": "營養三明治.",
@@ -49,18 +17,114 @@
   },
   {
     "model": "minefield.Tiebreaker",
+    "pk": 101,
+    "fields": {
+      "person": "MAX",
+      "q_num": 2,
+      "q_text": "Which of these Taiwanese snacks does he like best?",
+      "component": "secretCollection-msx-010",
+      "ans_a": "鱔魚麵.",
+      "ans_b": "割包.",
+      "ans_c": "蚵仔煎.",
+      "ans_d": "肉圓.",
+      "correct_ans": "ans_b",
+      "discussion": "Which of these is your favorite and least favorite? What is your favorite Taiwanese snack of all? What snacks from other cuisines do you especially enjoy?"
+    }
+  },
+  {
+    "model": "minefield.Tiebreaker",
+    "pk": 102,
+    "fields": {
+      "person": "MAX",
+      "q_num": 3,
+      "q_text": "Which of these words would he not use to describe himself?",
+      "component": "secretCollection-msx-004",
+      "ans_a": "Curious.",
+      "ans_b": "Cynical.",
+      "ans_c": "Hedonistic.",
+      "ans_d": "Perfectionist.",
+      "correct_ans": "ans_c",
+      "discussion": "Do you think any of these words describe you?"
+    }
+  },
+  {
+    "model": "minefield.Tiebreaker",
     "pk": 103,
     "fields": {
       "person": "MAX",
       "q_num": 4,
-      "q_text": "Which of these statements is true about him?",
-      "component": "secretCollection-msx-014",
-      "ans_a": "He's a hardcore gamer.",
-      "ans_b": "He's an atheist.",
-      "ans_c": "He's gay.",
-      "ans_d": "He's married.",
+      "q_text": "If all of these jobs offered identical pay and work conditions, which would be his last choice?",
+      "component": "secretCollection-msx-019",
+      "ans_a": "Art class nude model.",
+      "ans_b": "One-on-one English tutor.",
+      "ans_c": "Sperm donor.",
+      "ans_d": "Taiwanese-style gigolo (牛郎).",
+      "correct_ans": "ans_d",
+      "discussion": "How would your rank these from first to last choice (changing 'English' to 'Chinese')?"
+    }
+  },
+  {
+    "model": "minefield.Tiebreaker",
+    "pk": 104,
+    "fields": {
+      "person": "MAX",
+      "q_num": 5,
+      "q_text": "Which of these is his favorite area of Taipei?",
+      "component": "secretCollection-msx-031",
+      "ans_a": "Gongguan.",
+      "ans_b": "Maokong Tea Plantations.",
+      "ans_c": "Tianmu.",
+      "ans_d": "Zhongxiao Shopping District.",
+      "correct_ans": "ans_a",
+      "discussion": "Which of these areas is your favorite? Are there any other areas of Taipei you enjoy even more?"
+    }
+  },
+  {
+    "model": "minefield.Tiebreaker",
+    "pk": 105,
+    "fields": {
+      "person": "MAX",
+      "q_num": 6,
+      "q_text": "What does he think is his biggest advantage over most of his classmates?",
+      "component": "secretCollection-msx-028",
+      "ans_a": "Creativity.",
+      "ans_b": "English ability.",
+      "ans_c": "Independence.",
+      "ans_d": "Studiousness.",
+      "correct_ans": "ans_a",
+      "discussion": "What do you think is your greatest strength as an English learner? What about as a student in general? What is your greatest weakness?"
+    }
+  },
+  {
+    "model": "minefield.Tiebreaker",
+    "pk": 106,
+    "fields": {
+      "person": "MAX",
+      "q_num": 7,
+      "q_text": "Which kind of student most often dislikes him?",
+      "component": "secretCollection-msx-002",
+      "ans_a": "Younger men.",
+      "ans_b": "Older men.",
+      "ans_c": "Younger women.",
+      "ans_d": "Older women.",
+      "correct_ans": "ans_d",
+      "discussion": "Is there any type of person that you find often dislikes you? Why do you think they dislike you?"
+    }
+  },
+  {
+    "model": "minefield.Tiebreaker",
+    "pk": 107,
+    "fields": {
+      "person": "MAX",
+      "q_num": 8,
+      "q_text": "Which of these words would he not use to describe himself?",
+      "component": "secretCollection-msx-005",
+      "ans_a": "Cynical.",
+      "ans_b": "Flexible.",
+      "ans_c": "Introverted.",
+      "ans_d": "Perfectionist.",
       "correct_ans": "ans_b",
-      "discussion": "Which of these is your favorite and least favorite? What is your favorite Taiwanese snack of all? What snacks from other cuisines do you especially enjoy?"
+      "discussion": "Do you think any of these words describe you?"
     }
   }
 ]

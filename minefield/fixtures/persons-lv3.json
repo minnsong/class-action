@@ -3,7 +3,7 @@
     "model": "minefield.Person",
     "pk": 0,
     "fields": {
-      "name": "ALAN",
+      "name": "AMY_XIA",
       "type": "student",
       "password": ""
     }
@@ -12,7 +12,7 @@
     "model": "minefield.Person",
     "pk": 1,
     "fields": {
-      "name": "ARTHUR",
+      "name": "AMY_WANG",
       "type": "student",
       "password": ""
     }
@@ -21,7 +21,7 @@
     "model": "minefield.Person",
     "pk": 2,
     "fields": {
-      "name": "BEN",
+      "name": "ANA",
       "type": "student",
       "password": ""
     }
@@ -30,7 +30,7 @@
     "model": "minefield.Person",
     "pk": 3,
     "fields": {
-      "name": "BEVERLY",
+      "name": "ANDREW",
       "type": "student",
       "password": ""
     }
@@ -39,7 +39,7 @@
     "model": "minefield.Person",
     "pk": 4,
     "fields": {
-      "name": "CHUAN",
+      "name": "CHANG",
       "type": "student",
       "password": ""
     }
@@ -48,7 +48,7 @@
     "model": "minefield.Person",
     "pk": 5,
     "fields": {
-      "name": "CHULIN",
+      "name": "CHUCK",
       "type": "student",
       "password": ""
     }
@@ -57,7 +57,7 @@
     "model": "minefield.Person",
     "pk": 6,
     "fields": {
-      "name": "CLAIRE",
+      "name": "CINDY",
       "type": "student",
       "password": ""
     }
@@ -66,7 +66,7 @@
     "model": "minefield.Person",
     "pk": 7,
     "fields": {
-      "name": "DALE",
+      "name": "DUNCAN",
       "type": "student",
       "password": ""
     }
@@ -75,7 +75,7 @@
     "model": "minefield.Person",
     "pk": 8,
     "fields": {
-      "name": "EVERLEY",
+      "name": "ELAINE",
       "type": "student",
       "password": ""
     }
@@ -84,7 +84,7 @@
     "model": "minefield.Person",
     "pk": 9,
     "fields": {
-      "name": "FUJI",
+      "name": "FRANK",
       "type": "student",
       "password": ""
     }
@@ -93,7 +93,7 @@
     "model": "minefield.Person",
     "pk": 10,
     "fields": {
-      "name": "JAROMIN",
+      "name": "JASMINE",
       "type": "student",
       "password": ""
     }
@@ -102,7 +102,7 @@
     "model": "minefield.Person",
     "pk": 11,
     "fields": {
-      "name": "JOANNA",
+      "name": "JASON",
       "type": "student",
       "password": ""
     }
@@ -111,7 +111,7 @@
     "model": "minefield.Person",
     "pk": 12,
     "fields": {
-      "name": "JODY",
+      "name": "KEVIN",
       "type": "student",
       "password": ""
     }
@@ -120,7 +120,7 @@
     "model": "minefield.Person",
     "pk": 13,
     "fields": {
-      "name": "KAI",
+      "name": "KO",
       "type": "student",
       "password": ""
     }
@@ -129,7 +129,7 @@
     "model": "minefield.Person",
     "pk": 14,
     "fields": {
-      "name": "KARL",
+      "name": "LAVONNE",
       "type": "student",
       "password": ""
     }
@@ -138,7 +138,7 @@
     "model": "minefield.Person",
     "pk": 15,
     "fields": {
-      "name": "KIERAN",
+      "name": "LULU",
       "type": "student",
       "password": ""
     }
@@ -147,7 +147,7 @@
     "model": "minefield.Person",
     "pk": 16,
     "fields": {
-      "name": "LIZ",
+      "name": "MONICA",
       "type": "student",
       "password": ""
     }
@@ -156,7 +156,7 @@
     "model": "minefield.Person",
     "pk": 17,
     "fields": {
-      "name": "OWEN",
+      "name": "MORRIS",
       "type": "student",
       "password": ""
     }
@@ -165,7 +165,7 @@
     "model": "minefield.Person",
     "pk": 18,
     "fields": {
-      "name": "PEGGY",
+      "name": "PATRICIA",
       "type": "student",
       "password": ""
     }
@@ -174,7 +174,7 @@
     "model": "minefield.Person",
     "pk": 19,
     "fields": {
-      "name": "PEIYING",
+      "name": "SYLVIA",
       "type": "student",
       "password": ""
     }
@@ -183,7 +183,7 @@
     "model": "minefield.Person",
     "pk": 20,
     "fields": {
-      "name": "STEFFI",
+      "name": "TRAVIS",
       "type": "student",
       "password": ""
     }
@@ -192,7 +192,7 @@
     "model": "minefield.Person",
     "pk": 21,
     "fields": {
-      "name": "SUN",
+      "name": "VICTOR",
       "type": "student",
       "password": ""
     }
@@ -201,7 +201,7 @@
     "model": "minefield.Person",
     "pk": 22,
     "fields": {
-      "name": "TINA",
+      "name": "VIOLET",
       "type": "student",
       "password": ""
     }
@@ -210,7 +210,7 @@
     "model": "minefield.Person",
     "pk": 23,
     "fields": {
-      "name": "TRISTA",
+      "name": "YULANG",
       "type": "student",
       "password": ""
     }
@@ -219,18 +219,9 @@
     "model": "minefield.Person",
     "pk": 24,
     "fields": {
-      "name": "WINNIE",
-      "type": "student",
-      "password": ""
-    }
-  },
-  {
-    "model": "minefield.Person",
-    "pk": 25,
-    "fields": {
       "name": "MAX",
       "type": "teacher",
-      "password": "8913"
+      "password": "123"
     }
   }
 ]

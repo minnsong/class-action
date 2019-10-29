@@ -1,0 +1,66 @@
+[
+  {
+    "model": "minefield.Tiebreaker",
+    "pk": 100,
+    "fields": {
+      "person": "MAX",
+      "q_num": 1,
+      "q_text": "Which of these compliments from a student would make him happiest?",
+      "component": "secretCollection-msx-029",
+      "ans_a": "I appreciate how hard you work preparing materials for our class.",
+      "ans_b": "You are a handsome guy.",
+      "ans_c": "You are a very good, professional teacher.",
+      "ans_d": "Your class is very interesting.",
+      "correct_ans": "ans_d",
+      "discussion": "What kinds of compliments make you happiest? Is there any compliment that you get that doesn't make you particularly happy?"
+    }
+  },
+  {
+    "model": "minefield.Tiebreaker",
+    "pk": 101,
+    "fields": {
+      "person": "MAX",
+      "q_num": 2,
+      "q_text": "Which of these words would he not use to describe himself?",
+      "component": "secretCollection-msx-005",
+      "ans_a": "Cynical.",
+      "ans_b": "Flexible.",
+      "ans_c": "Introverted.",
+      "ans_d": "Perfectionist.",
+      "correct_ans": "ans_b",
+      "discussion": "Do you think any of these words describe you?"
+    }
+  },
+  {
+    "model": "minefield.Tiebreaker",
+    "pk": 102,
+    "fields": {
+      "person": "MAX",
+      "q_num": 3,
+      "q_text": "Which of these Taiwanese snacks does he refuse to eat?",
+      "component": "secretCollection-msx-003",
+      "ans_a": "營養三明治.",
+      "ans_b": "臭豆腐.",
+      "ans_c": "大腸麵線.",
+      "ans_d": "棺材板.",
+      "correct_ans": "ans_a",
+      "discussion": "Which of these is your favorite and least favorite? What is your favorite Taiwanese snack of all? What snacks from other cuisines do you especially enjoy?"
+    }
+  },
+  {
+    "model": "minefield.Tiebreaker",
+    "pk": 103,
+    "fields": {
+      "person": "MAX",
+      "q_num": 4,
+      "q_text": "Which of these statements is true about him?",
+      "component": "secretCollection-msx-014",
+      "ans_a": "He's a hardcore gamer.",
+      "ans_b": "He's an atheist.",
+      "ans_c": "He's gay.",
+      "ans_d": "He's married.",
+      "correct_ans": "ans_b",
+      "discussion": "Which of these is your favorite and least favorite? What is your favorite Taiwanese snack of all? What snacks from other cuisines do you especially enjoy?"
+    }
+  }
+]
