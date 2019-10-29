@@ -1,5 +1,31 @@
 {% extends "minefield/base.html" %}
 {% block content %}
-	<h2>Add student</h2>
-	<form action="{% url 'minefield:add_students' teacher_name %}" method="post">
-		{% for s in
+<div class="main">
+<h2>Absent students</h2>
+<form action="{% url 'minefield:add_student' teacher_name %}" method="post">
+	{% csrf_token %}
+	{{ form1 }}
+<input type="submit" value="Add">
+</form>
+<br>
+<h2>Present students</h2>
+<form action="{% url 'minefield:drop_student' teacher_name %}" method="post">
+	{% csrf_token %}
+	{{ form2 }}
+<input type="submit" value="Drop">
+</form>
+<hr>
+<h1>Teams</h1>
+{% for t in teams %}
+	<h2>Team #{{ forloop.counter0 }}</h2>
+	{% for s in t %}
+		<h4>{{ s }}</h4>
+	{% endfor %}
+<br/>
+{% endfor %}
+<form action="{% url 'minefield:rearrange_teams' teacher_name %}" method="post">
+	{% csrf_token %}
+	<button type="submit">Re-arrange</button>
+</form>
+</div>
+{% endblock %} 

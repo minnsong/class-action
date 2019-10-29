@@ -1,9 +1,10 @@
 [
   {
     "model": "minefield.Tiebreaker",
-    "pk": 0,
+    "pk": 100,
     "fields": {
-      "q_num": 0,
+      "person": "MAX",
+      "q_num": 1,
       "q_text": "Which of these compliments from a student would make him happiest?",
       "component": "secretCollection-msx-029",
       "ans_a": "I appreciate how hard you work preparing materials for our class.",
@@ -16,9 +17,10 @@
   },
   {
     "model": "minefield.Tiebreaker",
-    "pk": 1,
+    "pk": 101,
     "fields": {
-      "q_num": 1,
+      "person": "MAX",
+      "q_num": 2,
       "q_text": "Which of these words would he not use to describe himself?",
       "component": "secretCollection-msx-005",
       "ans_a": "Cynical.",
@@ -31,9 +33,10 @@
   },
   {
     "model": "minefield.Tiebreaker",
-    "pk": 2,
+    "pk": 102,
     "fields": {
-      "q_num": 2,
+      "person": "MAX",
+      "q_num": 3,
       "q_text": "Which of these Taiwanese snacks does he refuse to eat?",
       "component": "secretCollection-msx-003",
       "ans_a": "營養三明治.",
@@ -46,10 +49,11 @@
   },
   {
     "model": "minefield.Tiebreaker",
-    "pk": 3,
+    "pk": 103,
     "fields": {
-      "q_num": 3,
-      "q_text": "Which of these statements is true?",
+      "person": "MAX",
+      "q_num": 4,
+      "q_text": "Which of these statements is true about him?",
       "component": "secretCollection-msx-014",
       "ans_a": "He's a hardcore gamer.",
       "ans_b": "He's an atheist.",

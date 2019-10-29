@@ -1,5 +1,10 @@
 <style>
 	body { margin: 0; }
+	table, th, td {
+		border: 1px solid black;
+		border-collapse: collapse;
+		padding: 8px;
+	}
 	.navbar {
 		overflow: hidden;
 		background-color: #333;
@@ -22,12 +27,13 @@
 	}
 	.main {
 		padding: 16px;
-		margin-top: 30px;
+		margin-top: 48px;
 	}
 </style>
 {% if for_type == 't' %}
 	<div class="navbar">
 		<a href="{% url 'minefield:show_students' teacher_name %}">Students</a>
+		<a href="{% url 'minefield:show_teams' teacher_name %}">Teams</a>
 		<a href="{% url 'minefield:game' teacher_name %}">Gameplay</a>
 		<a href="{% url 'minefield:scoreboard' teacher_name %}">Scoreboard</a>
 		<a href="{% url 'minefield:master' teacher_name %}">Questionnaire</a>

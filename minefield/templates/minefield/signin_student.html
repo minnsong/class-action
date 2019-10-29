@@ -1,5 +1,6 @@
 <h2>Click on your name below:</h2>
 <ul>
 {% for student in student_list %}
-	<li><a href="/minefield/s/{{ student }}/">{{ student }}</a></li>
+	<li><a href="/minefield/s/{{ student }}/questions/">{{ student }}</a></li>
+	<hr>
 {% endfor %}

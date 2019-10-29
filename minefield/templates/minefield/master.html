@@ -1,28 +1,57 @@
 {% extends "minefield/base.html" %}
 {% block content %}
 <div class="main">
-{% for q in question_list %}
-	<form action="{% url 'minefield:update_master' teacher_name %}" method="post">
-		{% csrf_token %}
-		<span><input type="hidden" name="question_id" value={{ q.id }}>
+<form action="{% url 'minefield:update_master' teacher_name %}" method="post">
+	{% csrf_token %}
+	<table>
+	{% for q in question_list %}
+		<tr>
+		<td>
 		{% if q.show_q == True %}
-			<input type="hidden" name="action" value="hide">
-			<input type="submit" value="Hide">
+			<input type="checkbox" name="{{ q.id }}" id="{{ q.id }}" value="{{ q.id }}">
 		{% else %}
-			<input type="hidden" name="action" value="show">
-			<input type="submit" value="Show">
+			<input type="checkbox" name="{{ q.id }}" id="{{ q.id }}" value="{{ q.id }}" checked>
 		{% endif %}
-		<h3>{{ q.person }}&nbsp{{ q.q_num }}: {{ q.q_text }}</h3>
-	</form>
-	<form action="{% url 'minefield:update_master' teacher_name %}" method="post">
-		{% csrf_token %}
-		</span>
-			<input type="checkbox" name="{{ q.id }}_{{ q.ans_a }}" value="a"> {{ A }}&nbsp;&nbsp;
-			<input type="checkbox" name="{{ q.id }}_{{ q.ans_b }}" value="b"> {{ B }}&nbsp;&nbsp;
-			<input type="checkbox" name="{{ q.id }}_{{ q.ans_c }}" value="c"> {{ C }}&nbsp;&nbsp;
-			<input type="checkbox" name="{{ q.id }}_{{ q.ans_d }}" value="d"> {{ D }}
-		<span>
-		<input type="submit" value="Update">
-	</form>
-{% endfor %}
+		<label for="{{ q.id }}">{{ q.person }}&nbsp;{{ q.q_num }}&nbsp;&nbsp;</label>
+		</td>
+		<td>
+		{% if 'a' in q.disabled_ans %}
+			<input type="checkbox" name="{{ q.id }}_a" id="{{ q.id }}_a" value="a" checked>
+		{% else %}
+			<input type="checkbox" name="{{ q.id }}_a" id="{{ q.id }}_a" value="a">
+		{% endif %}
+		<label for="{{ q.id }}_a">A&nbsp;&nbsp;</label>
+		{% if 'b' in q.disabled_ans %}
+			<input type="checkbox" name="{{ q.id }}_b" id="{{ q.id }}_b" value="b" checked>
+		{% else %}
+			<input type="checkbox" name="{{ q.id }}_b" id="{{ q.id }}_b" value="b">
+		{% endif %}
+		<label for="{{ q.id }}_b">B&nbsp;&nbsp;</label>
+		{% if 'c' in q.disabled_ans %}
+			<input type="checkbox" name="{{ q.id }}_c" id="{{ q.id }}_c" value="c" checked>
+		{% else %}
+			<input type="checkbox" name="{{ q.id }}_c" id="{{ q.id }}_c" value="c">
+		{% endif %}
+		<label for="{{ q.id }}_c">C&nbsp;&nbsp;</label>
+		{% if 'd' in q.disabled_ans %}
+			<input type="checkbox" name="{{ q.id }}_d" id="{{ q.id }}_d" value="d" checked>
+		{% else %}
+			<input type="checkbox" name="{{ q.id }}_d" id="{{ q.id }}_d" value="d">
+		{% endif %}
+		<label for="{{ q.id }}_d">D&nbsp;&nbsp;</label>
+		</td>
+		<td>
+		{% if q.show_dkn == True %}
+			<input type="checkbox" name="{{ q.id }}_dkn" id="{{ q.id }}_dkn" value="dkn">	
+		{% else %}
+			<input type="checkbox" name="{{ q.id }}_dkn" id="{{ q.id }}_dkn" value="dkn" checked>
+		{% endif %}
+		<label for="{{ q.id }}_dkn">Hide discussion</label>
+		</td>
+		</tr>
+	{% endfor %}
+	</table><br>
+	<input type="submit" value="Update">
+</form>
+</div>
 {% endblock %}

@@ -1,9 +1,7 @@
 {% extends "minefield/base.html" %}
 {% block content %}
 <div class="main">
-{% if for_type == 't' %}
-	<h1>{{ msg }}</h1>
-{% endif %}
+<h1>{{ msg }}</h1>
 {% for q in question_list %}
 	{% if q.show_q == True %}
 		<h2>{{ q.person }}&nbsp{{ q.q_num }}</h2>
@@ -48,5 +46,45 @@
 		</form>
 	{% endif %}
 {% endfor %}
+{% if question_count == 0 %}
+	<h2>{{ tb.person }}&nbsp{{ tb.q_num }}</h2>
+	<h4>{{ tb.q_text }}</h4>
+	{% if for_type == 's' %}
+		<form action="{% url 'minefield:submit_guess_s' student_name %}" method="post">
+	{% else %}
+		<form action="{% url 'minefield:submit_guess_t' teacher_name %}" method="post">
+	{% endif %}
+		{% csrf_token %}
+		<input type="hidden" name="student_name" value={{ student_name }}>
+		<input type="hidden" name="for_type" value={{ for_type }}>
+		{% if 'a' in tb.disabled_ans %}
+			<input type="checkbox" name="choice" id="{{ tb.person }}_{{ tb.q_num }}_a" value="{{ tb.id }}_a" checked disabled>
+		{% else %} 
+			<input type="radio" name="choice" id="{{ tb.person }}_{{ tb.q_num }}_a" value="{{ tb.id }}_a">
+		{% endif %}
+		<label for="{{ tb.person }}_{{ tb.q_num }}_a">{{ tb.ans_a }}</label><br>
+		{% if 'b' in tb.disabled_ans %}
+			<input type="checkbox" name="choice" id="{{ tb.person }}_{{ tb.q_num }}_a" value="{{ tb.id }}_b" checked disabled>
+		{% else %} 
+			<input type="radio" name="choice" id="{{ tb.person }}_{{ tb.q_num }}_b" value="{{ tb.id }}_b">
+		{% endif %}
+		<label for="{{ tb.person }}_{{ tb.q_num }}_a">{{ tb.ans_b }}</label><br>
+		{% if 'c' in tb.disabled_ans %}
+			<input type="checkbox" name="choice" id="{{ tb.person }}_{{ tb.q_num }}_a" value="{{ tb.id }}_c" checked disabled>
+		{% else %} 
+			<input type="radio" name="choice" id="{{ tb.person }}_{{ tb.q_num }}_c" value="{{ tb.id }}_c">
+		{% endif %}
+		<label for="{{ tb.person }}_{{ tb.q_num }}_a">{{ tb.ans_c }}</label><br>
+		{% if 'd' in tb.disabled_ans %}
+			<input type="checkbox" name="choice" id="{{ tb.person }}_{{ tb.q_num }}_a" value="{{ tb.id }}_d" checked disabled>
+		{% else %} 
+			<input type="radio" name="choice" id="{{ tb.person }}_{{ tb.q_num }}_d" value="{{ tb.id }}_d">
+		{% endif %}
+		<label for="{{ tb.person }}_{{ tb.q_num }}_a">{{ tb.ans_d }}</label><br>
+		{% if tb.show_dkn == True %}
+			<h4 style="color:blue">{{ tb.discussion }}</h4>
+		{% endif %}
+		<input type="submit" value="Select">
+{% endif %}
 </div>
 {% endblock %}

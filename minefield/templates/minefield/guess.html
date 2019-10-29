@@ -1,4 +1,5 @@
 <h2>
+{% if f_tiebreak == False %}
 	{% for t in team %}
 		{% if forloop.last %}
 			{{ t }}
@@ -11,6 +12,9 @@
 		{{ question.person }} {{ question.q_num }}
 	</span>
 	:
+{% else %}
+	{{ student_name }} is guessing about {{ question.person }} {{ question.q_num }}
+{% endif %}
 </h2>
 <h3 style="color:red">{{ question.q_text }}</h3>
 <p>A: {{ question.ans_a }}</p>

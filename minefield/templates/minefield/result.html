@@ -1,8 +1,16 @@
 {% load static %}
 {% if hit == True %}
-	<img src="{% static "minefield/explosion.png" %}" alt="explosion">
+	{% if f_tiebreak == False %}	
+		<img src="{% static "minefield/explosion.png" %}" alt="explosion">
+	{% else %}
+		<img src="{% static "minefield/missed.jpg" %}" alt="missed" style="height:50%;">
+	{% endif %}
 {% else %}
-	<img src="{% static "minefield/safe.jpg" %}" alt="safe">
+	{% if f_tiebreak == False %}
+		<img src="{% static "minefield/safe.jpg" %}" alt="safe">
+	{% else %}
+		<img src="{% static "minefield/goal.png" %}" alt="goal">
+	{% endif %}
 {% endif %}
 <h1>{{ msg }}</h1>
 <form action="{% url 'minefield:discussion' teacher_name %}" method="post">

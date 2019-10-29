@@ -1,8 +1,11 @@
-{% extends "minefield/base.html" %}
-{% block content %}
+<style>
+	table, th, td {
+		border: 1px solid black;
+		border-collapse: collapse;
+		padding: 8px;
+</style>
 <div class="main">
-	<h1>SCOREBOARD</h1>
-	<h2 style="color:red">{{ msg }}</h3>
+	<h1>FINAL STANDINGS</h1>
 	<table>
 	<th>Name</th><th>Score</th>
 	{% for s in student_list %}
@@ -10,5 +13,6 @@
 			<tr><td>{{ s.name }}</td><td align="right">{{ s.score }}</td></tr>	
 		{% endif %}
 	{% endfor %}
+	</table>
+	<h2 style="color:red">{{ msg }}</h3>
 </div>
-{% endblock %}

@@ -137,4 +137,4 @@ def rearrange_pairs(teams):
 	
 
 def select_random(teams_len):
-	return math.floor(random() * teams_len) 
+	return math.floor(random.random() * teams_len) 

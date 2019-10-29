@@ -55,6 +55,7 @@ class TiebreakerManager(models.Manager):
 
 
 class Tiebreaker(models.Model):
+	person = models.CharField(default="TIEBREAKER", max_length=32)
 	q_num = models.IntegerField(default=0)
 	q_text = models.CharField(max_length=256)
 	component = models.CharField(max_length=64)

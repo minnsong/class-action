@@ -1,0 +1,5 @@
+{% load static %}
+<h2>{{ msg }}</h2>
+<img src="{% static "minefield/penaltykick.jpg" %}" alt="pk">
+<h2></h2>
+<a href="{% url 'minefield:questions_t' teacher_name %}"><button>OK</button></a>
