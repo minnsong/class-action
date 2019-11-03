@@ -542,6 +542,7 @@ def show_questions_t(request, teacher_name):
 		winner_list = check_winner(student_dict)
 		if len(winner_list) == 1:
 			student_list = convert_dict_to_list(student_dict)
+			tiebreak_students = winner_list		# set so student UI will display as winner, even tho no tiebreak played
 			return render(request, 'minefield/scoreboard.html', {
 				'for_type': 't',
 				'teacher_name': teacher_name,

@@ -5,14 +5,14 @@
     "fields": {
       "person": "MAX",
       "q_num": 1,
-      "q_text": "Which of these Taiwanese snacks does he refuse to eat?",
-      "component": "secretCollection-msx-003",
-      "ans_a": "營養三明治.",
-      "ans_b": "臭豆腐.",
-      "ans_c": "大腸麵線.",
-      "ans_d": "棺材板.",
-      "correct_ans": "ans_a",
-      "discussion": "Which of these is your favorite and least favorite? What is your favorite Taiwanese snack of all? What snacks from other cuisines do you especially enjoy?"
+      "q_text": "Which of these words would he not use to describe himself?",
+      "component": "secretCollection-msx-004",
+      "ans_a": "Curious.",
+      "ans_b": "Cynical.",
+      "ans_c": "Hedonistic.",
+      "ans_d": "Perfectionist.",
+      "correct_ans": "",
+      "discussion": "Do you think any of these words describe you?"
     }
   },
   {
@@ -21,14 +21,14 @@
     "fields": {
       "person": "MAX",
       "q_num": 2,
-      "q_text": "Which of these Taiwanese snacks does he like best?",
-      "component": "secretCollection-msx-010",
-      "ans_a": "鱔魚麵.",
-      "ans_b": "割包.",
-      "ans_c": "蚵仔煎.",
-      "ans_d": "肉圓.",
-      "correct_ans": "ans_b",
-      "discussion": "Which of these is your favorite and least favorite? What is your favorite Taiwanese snack of all? What snacks from other cuisines do you especially enjoy?"
+      "q_text": "What does he think is his biggest weakness as a teacher?",
+      "component": "secretCollection-msx-030",
+      "ans_a": "Difficulty in explaining concepts clearly and simply.",
+      "ans_b": "Dislike of English as a language.",
+      "ans_c": "Introverted personality.",
+      "ans_d": "Lack of enough time to create new materials.",
+      "correct_ans": "",
+      "discussion": "What do you think is his biggest weakness? What do you think is your biggest weakness in work?"
     }
   },
   {
@@ -37,14 +37,14 @@
     "fields": {
       "person": "MAX",
       "q_num": 3,
-      "q_text": "Which of these words would he not use to describe himself?",
-      "component": "secretCollection-msx-004",
-      "ans_a": "Curious.",
-      "ans_b": "Cynical.",
-      "ans_c": "Hedonistic.",
-      "ans_d": "Perfectionist.",
-      "correct_ans": "ans_c",
-      "discussion": "Do you think any of these words describe you?"
+      "q_text": "Which of these is his favorite area of Taipei?",
+      "component": "secretCollection-msx-031",
+      "ans_a": "Gongguan.",
+      "ans_b": "Maokong Tea Plantations.",
+      "ans_c": "Tianmu.",
+      "ans_d": "Zhongxiao Shopping District.",
+      "correct_ans": "",
+      "discussion": "Which of these areas is your favorite? Are there any other areas of Taipei you enjoy even more?"
     }
   },
   {
@@ -59,8 +59,8 @@
       "ans_b": "One-on-one English tutor.",
       "ans_c": "Sperm donor.",
       "ans_d": "Taiwanese-style gigolo (牛郎).",
-      "correct_ans": "ans_d",
-      "discussion": "How would your rank these from first to last choice (changing 'English' to 'Chinese')?"
+      "correct_ans": "",
+      "discussion": "How would you rank these from first to last choice (changing 'English' to 'Chinese')?"
     }
   },
   {
@@ -69,14 +69,14 @@
     "fields": {
       "person": "MAX",
       "q_num": 5,
-      "q_text": "Which of these is his favorite area of Taipei?",
-      "component": "secretCollection-msx-031",
-      "ans_a": "Gongguan.",
-      "ans_b": "Maokong Tea Plantations.",
-      "ans_c": "Tianmu.",
-      "ans_d": "Zhongxiao Shopping District.",
-      "correct_ans": "ans_a",
-      "discussion": "Which of these areas is your favorite? Are there any other areas of Taipei you enjoy even more?"
+      "q_text": "Which of these things most annoys him?",
+      "component": "secretCollection-msx-001",
+      "ans_a": "Being criticized.",
+      "ans_b": "Being ignored.",
+      "ans_c": "Being lied to.",
+      "ans_d": "Being taken advantage of.",
+      "correct_ans": "",
+      "discussion": "Which of these things annoys you most? Can you think of anything else that annoys you even more?"
     }
   },
   {
@@ -85,14 +85,14 @@
     "fields": {
       "person": "MAX",
       "q_num": 6,
-      "q_text": "What does he think is his biggest advantage over most of his classmates?",
-      "component": "secretCollection-msx-028",
-      "ans_a": "Creativity.",
-      "ans_b": "English ability.",
-      "ans_c": "Independence.",
-      "ans_d": "Studiousness.",
-      "correct_ans": "ans_a",
-      "discussion": "What do you think is your greatest strength as an English learner? What about as a student in general? What is your greatest weakness?"
+      "q_text": "Which of these statements is true?",
+      "component": "secretCollection-msx-014",
+      "ans_a": "He's a hardcore gamer.",
+      "ans_b": "He's an atheist.",
+      "ans_c": "He's gay.",
+      "ans_d": "He's married.",
+      "correct_ans": "",
+      "discussion": "Which of these is your favorite and least favorite? What is your favorite Taiwanese snack of all? What snacks from other cuisines do you especially enjoy?"
     }
   },
   {
@@ -101,14 +101,14 @@
     "fields": {
       "person": "MAX",
       "q_num": 7,
-      "q_text": "Which kind of student most often dislikes him?",
-      "component": "secretCollection-msx-002",
-      "ans_a": "Younger men.",
-      "ans_b": "Older men.",
-      "ans_c": "Younger women.",
-      "ans_d": "Older women.",
-      "correct_ans": "ans_d",
-      "discussion": "Is there any type of person that you find often dislikes you? Why do you think they dislike you?"
+      "q_text": "Which of these jobs has he not had?",
+      "component": "secretCollection-msx-023",
+      "ans_a": "Pizza delivery driver.",
+      "ans_b": "Sperm donor.",
+      "ans_c": "Translator.",
+      "ans_d": "Web designer.",
+      "correct_ans": "",
+      "discussion": "Have you had any of these jobs, or similar ones? Which would you choose if they all paid the same? What's the most unusual job you've had?"
     }
   },
   {
@@ -117,14 +117,14 @@
     "fields": {
       "person": "MAX",
       "q_num": 8,
-      "q_text": "Which of these words would he not use to describe himself?",
-      "component": "secretCollection-msx-005",
-      "ans_a": "Cynical.",
-      "ans_b": "Flexible.",
-      "ans_c": "Introverted.",
-      "ans_d": "Perfectionist.",
-      "correct_ans": "ans_b",
-      "discussion": "Do you think any of these words describe you?"
+      "q_text": "Which of these jobs does he think he would be best at?",
+      "component": "secretCollection-msx-009",
+      "ans_a": "Computer technical support.",
+      "ans_b": "Lawyer.",
+      "ans_c": "Scientist.",
+      "ans_d": "Teacher of Chinese as a foreign language.",
+      "correct_ans": "",
+      "discussion": "Do you think you would be good at any of these jobs?"
     }
   }
 ]
